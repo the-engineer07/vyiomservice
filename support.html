@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Center — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Access developer documentation, contact customer support channels, or submit a technical help desk ticket directly to our engineers.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 30px 20px;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      background: var(--off);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: var(--r);
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-color: var(--purple);
+      background: var(--white);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover {
+      background: var(--purple2);
+      transform: translateY(-1px);
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/support.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-grid"></div>
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow" style="color: var(--purple3);">Help Desk</span>
+        <h1>Support <span>Center</span></h1>
+        <p>Developer documentation, system deployment guides, and customer technical support channels to keep your
+          operations synchronized.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: Help & Ticket Grid -->
+  <section style="padding: 100px 0; background: var(--off); border-bottom: 1px solid var(--border);">
+    <div class="container" style="max-width: 1200px;">
+
+      <div class="grid-2">
+        <!-- Left side: Channels & Docs -->
+        <div>
+          <h2
+            style="font-family: 'Inter', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--ink); margin-bottom: 24px; letter-spacing: -0.02em;">
+            Developer Documentation</h2>
+          <p style="font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 32px;">We build detailed
+            repository READMEs, REST API schemas, and server routing tables for every client platform. Accessible 24/7
+            for your internal developer teams.</p>
+
+          <div style="display:flex; flex-direction:column; gap: 16px; margin-bottom: 48px;">
+            <div
+              style="display:flex; align-items:center; gap: 12px; padding: 16px; border: 1px solid var(--border); background: var(--white); border-radius: var(--r);">
+              <div style="font-size: 20px; color: var(--purple);"><i class="fas fa-book-bookmark"></i></div>
+              <div>
+                <h4 style="font-size: 14px; font-weight: 600; color: var(--ink);">System Setup Guides</h4>
+                <p style="font-size: 12px; color: var(--muted);">Setup instructions for database migrations, local
+                  scripts runs, and keys config.</p>
+              </div>
+            </div>
+            <div
+              style="display:flex; align-items:center; gap: 12px; padding: 16px; border: 1px solid var(--border); background: var(--white); border-radius: var(--r);">
+              <div style="font-size: 20px; color: var(--purple);"><i class="fas fa-network-wired"></i></div>
+              <div>
+                <h4 style="font-size: 14px; font-weight: 600; color: var(--ink);">REST API Endpoints</h4>
+                <p style="font-size: 12px; color: var(--muted);">Schemas and response payload models for custom ERP/CRM
+                  webhook connections.</p>
+              </div>
+            </div>
+            <div
+              style="display:flex; align-items:center; gap: 12px; padding: 16px; border: 1px solid var(--border); background: var(--white); border-radius: var(--r);">
+              <div style="font-size: 20px; color: var(--purple);"><i class="fas fa-server"></i></div>
+              <div>
+                <h4 style="font-size: 14px; font-weight: 600; color: var(--ink);">Netlify Deployment Tables</h4>
+                <p style="font-size: 12px; color: var(--muted);">Deployment configurations, redirect rules, and headers
+                  cache optimizations.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 16px;">
+            Direct Channels</h3>
+          <ul
+            style="list-style:none; padding:0; display:flex; flex-direction:column; gap: 12px; font-size: 14px; color: var(--muted);">
+            <li><i class="fas fa-envelope" style="color: var(--purple); margin-right: 8px;"></i> Email support: <a
+                href="mailto:vyiomdigitalsolutions@gmail.com"
+                style="color: var(--ink); font-weight:500;">vyiomdigitalsolutions@gmail.com</a></li>
+            <li><i class="fas fa-phone" style="color: var(--purple); margin-right: 8px;"></i> Hotline support: <a
+                href="tel:+919342732906" style="color: var(--ink); font-weight:500;">+91 9342732906</a></li>
+            <li><i class="fab fa-whatsapp" style="color: var(--purple); margin-right: 8px;"></i> WhatsApp sync: <a
+                href="https://wa.me/919342732906" style="color: var(--ink); font-weight:500;">Chat on WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <!-- Right side: Ticket form -->
+        <div>
+          <h2
+            style="font-family: 'Inter', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 600; color: var(--ink); margin-bottom: 24px; letter-spacing: -0.02em;">
+            Submit a Support Ticket</h2>
+          <div class="contact-form-card" style="border-radius: var(--r);">
+            <form id="supportForm" onsubmit="handleSupportSubmit(event)">
+              <div class="form-group">
+                <label for="supname">Full Name <span>*</span></label>
+                <input type="text" id="supname" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="supemail">Work Email <span>*</span></label>
+                <input type="email" id="supemail" class="form-input" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="supcat">Support Category <span>*</span></label>
+                <select id="supcat" class="form-select" required>
+                  <option value="" disabled selected>Select category</option>
+                  <option value="Technical Bug">Technical Anomaly / Bug</option>
+                  <option value="Billing">Billing &amp; Invoices</option>
+                  <option value="Integration request">System Integration request</option>
+                  <option value="Database edit">Database modification / sync</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="supsubj">Subject <span>*</span></label>
+                <input type="text" id="supsubj" class="form-input" placeholder="Summarize your issue" required>
+              </div>
+              <div class="form-group">
+                <label for="supmsg">Description <span>*</span></label>
+                <textarea id="supmsg" class="form-textarea"
+                  placeholder="Provide system details, error codes, or log snippets..." required></textarea>
+              </div>
+              <button type="submit" class="form-submit" id="supsubmit">Submit Ticket</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+
+    function handleSupportSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('supsubmit');
+      const originalText = btn.textContent;
+      btn.textContent = 'Submitting Ticket...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        alert('Success! Your support ticket has been submitted to Vyiom engineering. Ticket reference number: VSD-2026-9041.');
+        document.getElementById('supportForm').reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 1500);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Development — Vyiom Digital Solutions</title>
+  <meta name="description" content="Custom business management systems, enterprise software, custom ERP/CRM modules, and task automation systems designed to fit your unique operational workflows.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Premium Software Ecosystem Layout inspired by image_fa9682.jpg */
+    .nvidia-section-dark {
+      background: #090a0f;
+      padding: 120px 0;
+    }
+    
+    /* Stats Info-Matrix Banner Layer */
+    .ecosystem-metrics-matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 80px;
+    }
+    .metric-entry {
+      display: flex;
+      flex-direction: column;
+    }
+    .metric-entry .metric-value {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric-entry .metric-label {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+
+    /* Asymmetric Interactive Media Grid Arrays */
+    .capabilities-asymmetric-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+    }
+    .asymmetric-block-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1.9fr;
+      gap: 50px;
+      align-items: stretch;
+    }
+    .asymmetric-block-row.inverted-row {
+      grid-template-columns: 1.9fr 1.1fr;
+    }
+
+    /* Left-Side Core Text Description Architectures */
+    .nvidia-card {
+      background: #111218;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      padding: 50px;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: border-color 0.4s, transform 0.4s;
+    }
+    .nvidia-card:hover {
+      border-color: rgba(118, 185, 0, 0.3);
+      transform: translateY(-4px);
+    }
+    .nvidia-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 16px 0;
+      letter-spacing: -0.02em;
+    }
+    .nvidia-card p {
+      font-size: 15px;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin: 0 0 32px 0;
+      font-weight: 300;
+    }
+    .nvidia-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #76b900;
+      margin: 0 0 16px 0;
+    }
+    .nvidia-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .nvidia-list li {
+      font-size: 14.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .nvidia-list li::before {
+      content: "—";
+      color: #76b900;
+      font-weight: bold;
+    }
+
+    /* Right-Side Mosaic Layout Arrays */
+    .asymmetric-media-mosaic {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 20px;
+    }
+    .asymmetric-media-mosaic.alternate-mosaic {
+      grid-template-columns: 1fr 1.3fr;
+    }
+    .mosaic-panel {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+    .mosaic-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .mosaic-panel:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Interactive Context Panel Overlays */
+    .mosaic-context-overlay {
+      background: #111218;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .mosaic-context-overlay.brand-green {
+      background: #76b900;
+      color: #090a0f;
+      border: none;
+    }
+    .mosaic-context-overlay .context-icon {
+      font-size: 26px;
+      color: #76b900;
+      margin-bottom: 30px;
+    }
+    .mosaic-context-overlay.brand-green .context-icon {
+      color: #090a0f;
+    }
+    .mosaic-context-overlay p {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 1150px) {
+      .ecosystem-metrics-matrix {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+      .asymmetric-block-row, .asymmetric-block-row.inverted-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .asymmetric-media-mosaic, .asymmetric-media-mosaic.alternate-mosaic {
+        grid-template-columns: 1.2fr 1fr;
+        height: 360px;
+      }
+    }
+    @media (max-width: 680px) {
+      .ecosystem-metrics-matrix {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .asymmetric-media-mosaic, .asymmetric-media-mosaic.alternate-mosaic {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .mosaic-panel { height: 220px; }
+      .mosaic-context-overlay { height: 180px; padding: 30px; }
+      .nvidia-card { padding: 32px; }
+      .nvidia-card h3 { font-size: 26px; }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/software-development.html">
+</head>
+<body>
+
+<!-- Slide-out mobile drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <span class="drawer-logo">Vyiom</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="drawer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="careers.html">Careers</a>
+    <a href="faq.html">FAQ</a>
+    <a href="resources.html">Resources</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+</div>
+
+<!-- Header navbar -->
+<nav class="site-nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+      <span class="nav-logo-name">Vyiom</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta">Get in Touch</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="subpage-hero">
+  <div class="subpage-hero-grid"></div>
+  <div class="container">
+    <div class="subpage-hero-content">
+      <span class="eyebrow" style="color: #76b900;">02. Service detail</span>
+      <h1>Software <span style="color: #76b900;">Development</span></h1>
+      <p>Custom Software Solutions That Solve Real Business Problems. Every business operates differently. We develop software that matches your processes, improves productivity, and reduces manual work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Content Block: Capabilities[cite: 3] -->
+<section class="nvidia-section-dark">
+  <div class="container">
+    <span class="eyebrow" style="color: #76b900;">Capabilities</span>
+    <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 600; color: #ffffff; margin-bottom: 40px; letter-spacing: -0.02em;">Custom Operations Ecosystems</h2>
+    
+    <!-- Top-Tier System Metrics Row Matrix Architecture -->
+    <div class="ecosystem-metrics-matrix">
+      <div class="metric-entry">
+        <div class="metric-value">99.9%</div>
+        <div class="metric-label">System Architecture Operational Uptime</div>
+      </div>
+      <div class="metric-entry">
+        <div class="metric-value">40%+</div>
+        <div class="metric-label">Average Reduction in Manual Workflows</div>
+      </div>
+      <div class="metric-entry">
+        <div class="metric-value">256-bit</div>
+        <div class="metric-label">Enterprise-Grade Bank Encryption Standard</div>
+      </div>
+      <div class="metric-entry">
+        <div class="metric-value">REST</div>
+        <div class="metric-label">Fully Adaptable Microservices Structure</div>
+      </div>
+    </div>
+
+    <!-- Asymmetric Interactive Stack Core Content -->
+    <div class="capabilities-asymmetric-stack">
+      
+      <!-- BLOCK 1: Enterprise Software Development[cite: 3] -->
+      <div class="asymmetric-block-row">
+        <div class="nvidia-card">
+          <h3>Enterprise Software Development</h3>
+          <p>Build secure and scalable software for complex business operations. Designed for high volume transactional stability and multi-department syncing.</p>
+          <h4>Solutions Include:</h4>
+          <ul class="nvidia-list">
+            <li>Multi-tier enterprise management systems</li>
+            <li>Cross-department workflow automation platforms</li>
+            <li>Internal operation controls &amp; inventory tracking</li>
+            <li>Business intelligence dashboards &amp; KPI logs</li>
+          </ul>
+        </div>
+        <div class="asymmetric-media-mosaic">
+          <div class="mosaic-panel">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Advanced Infrastructure Systems Monitor Panels">
+          </div>
+          <div class="mosaic-context-overlay brand-green">
+            <i class="fas fa-network-wired context-icon"></i>
+            <p>Engineered for high transactional load capacity and zero communication delays.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 2: CRM & ERP Solutions[cite: 3] -->
+      <div class="asymmetric-block-row inverted-row">
+        <div class="asymmetric-media-mosaic alternate-mosaic">
+          <div class="mosaic-context-overlay">
+            <i class="fas fa-chart-pie context-icon"></i>
+            <p style="color: #ffffff;">Deep analytic pipeline modules optimizing modern B2B transactions.</p>
+          </div>
+          <div class="mosaic-panel">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Engineers Analyzing Financial Infrastructure Models">
+          </div>
+        </div>
+        <div class="nvidia-card">
+          <h3>Business Management Systems (CRM/ERP)</h3>
+          <p>Digitize and manage your complete business ecosystem. We engineer custom CRM and ERP systems tailored to your sales and supply chain constraints.</p>
+          <h4>Custom Modules:</h4>
+          <ul class="nvidia-list">
+            <li><strong>CRM:</strong> Lead tracking, pipeline management, sales metrics reports</li>
+            <li><strong>ERP:</strong> Finance charts, supply chain sync, operations control, inventory</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BLOCK 3: HR & Employee Platforms[cite: 3] -->
+      <div class="asymmetric-block-row">
+        <div class="nvidia-card">
+          <h3>HR &amp; Employee Platforms</h3>
+          <p>Improve workforce management. We build secure portals to track, coordinate, and pay employees, streamlining admin tasks.</p>
+          <h4>Key Features:</h4>
+          <ul class="nvidia-list">
+            <li>Employee profile storage &amp; lineage directories</li>
+            <li>Attendance monitoring &amp; check-in modules</li>
+            <li>Bespoke payroll calculations &amp; payslip exports</li>
+            <li>Leave management tracking &amp; approval workflows</li>
+            <li>Performance feedback cards &amp; progress logs</li>
+          </ul>
+        </div>
+        <div class="asymmetric-media-mosaic">
+          <div class="mosaic-panel">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80" alt="Corporate Team Coordinating Schedules Digitally">
+          </div>
+          <div class="mosaic-context-overlay" style="background: #1c2331;">
+            <i class="fas fa-users-gear context-icon" style="color: #76b900;"></i>
+            <p style="color: #ffffff;">Integrated user matrices built to support scaling department structures securely.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCK 4: Automation Software[cite: 3] -->
+      <div class="asymmetric-block-row inverted-row">
+        <div class="asymmetric-media-mosaic alternate-mosaic">
+          <div class="mosaic-context-overlay brand-green">
+            <i class="fas fa-robot context-icon"></i>
+            <p>Smart task configurations eliminating human entry script variations instantly.</p>
+          </div>
+          <div class="mosaic-panel">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Complex Integrated Microchip Hardware Logic Systems">
+          </div>
+        </div>
+        <div class="nvidia-card">
+          <h3>Automation Software</h3>
+          <p>Replace repetitive tasks with intelligent workflows. Connect tools together to automate document processing and invoicing rules.</p>
+          <h4>Automation Workflows:</h4>
+          <ul class="nvidia-list">
+            <li>Automated billing, invoicing, and tax scripts</li>
+            <li>Optical character document processing (OCR)</li>
+            <li>Multi-tier manager approval systems</li>
+            <li>Real-time SMS &amp; email notification triggers</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer[cite: 3] -->
+<footer class="site-footer" style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+  <div class="container">
+    <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+      <div>
+        <a href="index.html" class="footer-logo-link" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+          <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+          <span class="footer-logo-name" style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+        </a>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">High-performance custom web development, software solutions, and AI automation workflows built for business scale.</p>
+        <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All rights reserved.</p>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Services</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+          <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+          <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+          <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+          <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+          <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Company</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+          <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+          <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+          <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+          <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Resources</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+          
+          <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div></div>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+        <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  const ov = document.getElementById('drawerOverlay');
+  const dr = document.getElementById('drawer');
+  const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+  document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+  document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+  ov.addEventListener('click', () => tog(false));
+</script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Automation — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Deploy custom AI chatbots, workflow automations, document parsing pipelines, and add intelligent model capabilities to your ERP/CRM systems.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Custom Stylings adapted from the design architecture in image_fa8fbf.jpg */
+    .nvidia-section-dark {
+      background: #0b0c10;
+      padding: 120px 0;
+    }
+
+    /* Core Layout Layout Array */
+    .automation-split-container {
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+    }
+
+    .automation-block-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .automation-block-row.reverse-row {
+      grid-template-columns: 1.8fr 1.2fr;
+    }
+
+    /* Text Description Cards */
+    .nvidia-card {
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+
+    .nvidia-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0 0 20px 0;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .nvidia-card p {
+      font-size: 16px;
+      color: #a0aec0;
+      line-height: 1.7;
+      margin: 0 0 32px 0;
+      font-weight: 300;
+    }
+
+    .nvidia-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #76b900;
+      margin: 0 0 20px 0;
+    }
+
+    .nvidia-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .nvidia-list li {
+      font-size: 15px;
+      color: #e2e8f0;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .nvidia-list li::before {
+      content: "→";
+      color: #76b900;
+      font-weight: bold;
+    }
+
+    /* Media Grid Array blocks from image_fa8fbf.jpg */
+    .showcase-mosaic-wrapper {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .mosaic-image-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-img-box {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 140px;
+    }
+
+    .gallery-img-box.tall-box {
+      grid-row: span 2;
+      height: 296px;
+    }
+
+    .gallery-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Metrics Matrix Block */
+    .metrics-matrix-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-between;
+    }
+
+    .matrix-metric-item {
+      background: #171923;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .matrix-metric-item.accent-item {
+      background: #76b900;
+      border: none;
+    }
+
+    .matrix-metric-item .metric-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .matrix-metric-item.accent-item .metric-num {
+      color: #0b0c10;
+    }
+
+    .matrix-metric-item .metric-lbl {
+      font-size: 13px;
+      color: #a0aec0;
+      line-height: 1.4;
+    }
+
+    .matrix-metric-item.accent-item .metric-lbl {
+      color: rgba(11, 12, 16, 0.8);
+    }
+
+    /* Full-width Single Banner Frame style */
+    .landscape-banner-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      height: 400px;
+    }
+
+    .landscape-banner-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .landscape-banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(11, 12, 16, 0.1) 0%, rgba(11, 12, 16, 0.85) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 40px;
+    }
+
+    .landscape-banner-overlay p {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #ffffff;
+      max-width: 600px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 1024px) {
+
+      .automation-block-row,
+      .automation-block-row.reverse-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .showcase-mosaic-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .landscape-banner-frame {
+        height: 280px;
+      }
+
+      .landscape-banner-overlay {
+        padding: 24px;
+      }
+
+      .landscape-banner-overlay p {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/ai-automation.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-grid"></div>
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow" style="color: #76b900;">03. Service detail</span>
+        <h1>AI <span style="color: #76b900;">Automation</span></h1>
+        <p>Make Your Business Smarter With Artificial Intelligence. We build AI-powered systems that automate tasks,
+          improve decisions, and create better customer experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: Capabilities[cite: 4] -->
+  <section class="nvidia-section-dark">
+    <div class="container">
+      <span class="eyebrow" style="color: #76b900;">Capabilities</span>
+      <h2
+        style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 600; color: #ffffff; margin-bottom: 60px; letter-spacing: -0.02em;">
+        Intelligent System Architectures.</h2>
+
+      <div class="automation-split-container">
+
+        <!-- MODULE 1: AI Chatbots & Virtual Assistants[cite: 4] -->
+        <div class="automation-block-row">
+          <div class="nvidia-card" id="whatsapp">
+            <h3>AI Chatbots &amp; Virtual Assistants</h3>
+            <p>Create intelligent customer support experiences. We configure custom models to converse with leads and
+              sync appointments directly to calendars.</p>
+            <h4>Capabilities Include:</h4>
+            <ul class="nvidia-list">
+              <li>Automated 24/7 client conversations (WhatsApp, Web)</li>
+              <li>Interactive FAQ parsing &amp; answer matching</li>
+              <li>Calendar booking &amp; scheduling automation</li>
+              <li>Lead profiling &amp; qualification metrics tracking</li>
+            </ul>
+          </div>
+
+          <!-- Mosaic Layout structure inspired by the central layout of image_fa8fbf.jpg[cite: 4] -->
+          <div class="showcase-mosaic-wrapper">
+            <div class="mosaic-image-gallery">
+              <div class="gallery-img-box tall-box">
+                <img src="https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?auto=format&fit=crop&w=600&q=80"
+                  alt="AI Agent Interface">
+              </div>
+              <div class="gallery-img-box">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
+                  alt="Customer Support Dashboard">
+              </div>
+              <div class="gallery-img-box">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=600&q=80"
+                  alt="Scheduling Interface">
+              </div>
+            </div>
+            <div class="metrics-matrix-panel">
+              <div class="matrix-metric-item accent-item">
+                <div class="metric-num">78%</div>
+                <div class="metric-lbl">Increase in Engagement Speed</div>
+              </div>
+              <div class="matrix-metric-item">
+                <div class="metric-num">24/7</div>
+                <div class="metric-lbl">Autonomous Lead Diagnostics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 2: Business Process Automation[cite: 4] -->
+        <div class="automation-block-row reverse-row">
+          <div class="landscape-banner-frame">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
+              alt="Automated Data Pipeline Operations">
+            <div class="landscape-banner-overlay">
+              <p>Eliminate human operational discrepancies with secure internal robotic automation pipelines.</p>
+            </div>
+          </div>
+
+          <div class="nvidia-card">
+            <h3>Business Process Automation</h3>
+            <p>Reduce manual work using AI-driven workflows. We set up data extraction scripts and automated email
+              handlers to eliminate paperwork.</p>
+            <h4>Workflows We Automate:</h4>
+            <ul class="nvidia-list">
+              <li>Data entry ingestion &amp; format conversion</li>
+              <li>Document processing &amp; catalog indexing (OCR)</li>
+              <li>Contextual auto-response email queues</li>
+              <li>Weekly operations and performance metrics generation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- MODULE 3: AI-Powered Applications[cite: 4] -->
+        <div class="automation-block-row">
+          <div class="nvidia-card">
+            <h3>AI-Powered Applications</h3>
+            <p>Build intelligent applications using modern AI technologies. We engineer recommendation systems and
+              search indexing tools to increase sales.</p>
+            <h4>Key Solutions:</h4>
+            <ul class="nvidia-list">
+              <li>E-commerce product recommendation engines</li>
+              <li>Vector semantic search systems</li>
+              <li>Marketing copy &amp; content generators</li>
+              <li>Operations risk and customer churn predictors</li>
+            </ul>
+          </div>
+
+          <div class="showcase-mosaic-wrapper">
+            <div class="mosaic-image-gallery">
+              <div class="gallery-img-box">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+                  alt="Data Prediction Logs">
+              </div>
+              <div class="gallery-img-box tall-box">
+                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=600&q=80"
+                  alt="Vector Analytics Platform">
+              </div>
+              <div class="gallery-img-box">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
+                  alt="Semantic Search Graph">
+              </div>
+            </div>
+            <div class="metrics-matrix-panel">
+              <div class="matrix-metric-item">
+                <div class="metric-num">$15M</div>
+                <div class="metric-lbl">Client Revenue Unlocked</div>
+              </div>
+              <div class="matrix-metric-item accent-item">
+                <div class="metric-num">40+</div>
+                <div class="metric-lbl">Custom Modules Launched</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 4: AI Integration[cite: 4] -->
+        <div class="automation-block-row reverse-row">
+          <div class="landscape-banner-frame">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80"
+              alt="Global API Integration Networks">
+            <div class="landscape-banner-overlay">
+              <p>Seamlessly integrate foundational model infrastructure without changing your core production databases.
+              </p>
+            </div>
+          </div>
+
+          <div class="nvidia-card">
+            <h3>AI Integration</h3>
+            <p>Add AI capabilities into existing software. Connect LLM APIs to your existing corporate portal, CRM, or
+              legacy database.</p>
+            <h4>Integration Areas:</h4>
+            <ul class="nvidia-list">
+              <li>CRM databases (auto-summarizing client notes)</li>
+              <li>ERP resource trackers (anomaly checks)</li>
+              <li>Customer websites (conversational bots)</li>
+              <li>Legacy workflows &amp; internal platforms</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer[cite: 4] -->
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+  </script>
+</body>
+
+</html>

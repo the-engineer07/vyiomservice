@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IoT Systems — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Architect end-to-end IoT frameworks, connect sensors, compile Edge microcode firmware, and develop real-time telemetry dashboards.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Styling inspired by the luxury dark layout of image_fa38cd.jpg */
+    .premium-dark-section {
+      background-color: #111111;
+      /* Ultra deep dark background */
+      color: #ffffff;
+      padding: 120px 0;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Asymmetric Section Header Grid */
+    .premium-header-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 60px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+
+    .premium-header-left .section-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #888888;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .premium-header-left h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 3.8vw, 46px);
+      font-weight: 500;
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .premium-header-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .premium-header-right p {
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.5;
+      color: #cccccc;
+      font-weight: 400;
+      margin: 0 0 32px 0;
+      letter-spacing: -0.01em;
+    }
+
+    .premium-social-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .premium-social-icon {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .premium-social-icon:hover {
+      background: #ffffff;
+      color: #111111;
+      border-color: #ffffff;
+    }
+
+    /* Sub-bar section control utilities */
+    .deck-control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 24px;
+    }
+
+    .deck-control-bar h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888888;
+      margin: 0;
+    }
+
+    .deck-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .view-all-pill {
+      font-size: 12px;
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 8px 20px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    .view-all-pill:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .arrow-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .arrow-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      background: transparent;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* Horizontal Card Deck Layout Structure */
+    .premium-cards-scroll-container {
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scrollbar-width: none;
+      /* Hide scrollbar for clean look */
+    }
+
+    .premium-cards-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .premium-cards-deck {
+      display: flex;
+      gap: 24px;
+    }
+
+    /* Luxury Framework Card Item */
+    .premium-iot-card {
+      min-width: 320px;
+      width: 320px;
+      background: #1a1a1a;
+      border-radius: 24px;
+      /* Highly rounded cards like the reference image */
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    /* Simulation of data-centric stylized visualization boxes */
+    .card-visual-header {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #222222 0%, #2e3440 100%);
+      border-radius: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .card-visual-header i {
+      font-size: 42px;
+      color: rgba(255, 255, 255, 0.15);
+    }
+
+    .visual-meta-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      color: #76b900;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .premium-iot-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 0 12px 0;
+      color: #ffffff;
+    }
+
+    .premium-iot-card p {
+      font-size: 13.5px;
+      color: #aaaaaa;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
+      flex-grow: 1;
+    }
+
+    .tech-spec-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666666;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .premium-spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .premium-spec-list li {
+      font-size: 13px;
+      color: #dddddd;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .premium-spec-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #76b900;
+    }
+
+    .card-action-btn {
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 10px 0;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      transition: all 0.3s;
+      background: transparent;
+    }
+
+    .card-action-btn:hover {
+      background: #ffffff;
+      color: #111111;
+      border-color: #ffffff;
+    }
+
+    /* Responsive configurations */
+    @media (max-width: 991px) {
+      .premium-header-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/iot-smart-systems.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-grid"></div>
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow" style="color: #76b900;">05. Service detail</span>
+        <h1>IoT <span style="color: #76b900;">Systems</span></h1>
+        <p>Connected Technology For Smarter Operations. We develop IoT solutions that connect devices, collect data, and
+          enable intelligent control.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: Redesigned Premium Dark Capabilities[cite: 6] -->
+  <section class="premium-dark-section">
+    <div class="container">
+
+      <!-- Top Split Asymmetric Header Unit[cite: 6] -->
+      <div class="premium-header-grid">
+        <div class="premium-header-left">
+          <span class="section-tag">(01) Capabilities</span>
+          <h2>Connected Software &amp; Embedded Systems</h2>
+        </div>
+        <div class="premium-header-right">
+          <p>Architecting robust telemetry frameworks that bridge physical hardware installations with intelligent cloud
+            analytics engines.</p>
+
+        </div>
+      </div>
+
+      <!-- Controls Sub-bar Section[cite: 6] -->
+      <div class="deck-control-bar">
+        <h3>(02) System Architecture Deck</h3>
+        <div class="deck-actions">
+          <a href="#" class="view-all-pill">View All Modules</a>
+          <div class="arrow-buttons">
+            <button class="arrow-btn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+            <button class="arrow-btn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Rolling Card Container Setup[cite: 6] -->
+      <div class="premium-cards-scroll-container">
+        <div class="premium-cards-deck">
+
+          <!-- Card 1: Smart Monitoring Systems[cite: 6] -->
+          <div class="premium-iot-card">
+            <div class="card-visual-header">
+              <i class="fas fa-chart-line"></i>
+              <span class="visual-meta-tag">Telemetry Core</span>
+            </div>
+            <h4>Smart Monitoring</h4>
+            <p>Monitor assets and environments in real time. We build wireless telemetry pipelines to pull values from
+              remote sensors.</p>
+            <div class="tech-spec-label">Solutions Include:</div>
+            <ul class="premium-spec-list">
+              <li>Ambient temperature trackers</li>
+              <li>Hardware asset tracking logs</li>
+              <li>Energy load network monitors</li>
+              <li>Wireless Edge sensor arrays</li>
+            </ul>
+            <a href="contact.html" class="card-action-btn">View Details</a>
+          </div>
+
+          <!-- Card 2: Industrial IoT[cite: 6] -->
+          <div class="premium-iot-card">
+            <div class="card-visual-header">
+              <i class="fas fa-industry"></i>
+              <span class="visual-meta-tag">IIoT Industrial</span>
+            </div>
+            <h4>Industrial IoT</h4>
+            <p>Improve industrial operations. We construct predictive hardware dashboards and Edge remote control panels
+              to minimize downtime.</p>
+            <div class="tech-spec-label">Key Applications:</div>
+            <ul class="premium-spec-list">
+              <li>Machine performance trackers</li>
+              <li>Predictive maintenance alert boards</li>
+              <li>Factory line throughput tracking</li>
+              <li>Remote Edge control modules</li>
+            </ul>
+            <a href="contact.html" class="card-action-btn">View Details</a>
+          </div>
+
+          <!-- Card 3: Smart Automation[cite: 6] -->
+          <div class="premium-iot-card">
+            <div class="card-visual-header">
+              <i class="fas fa-cogs"></i>
+              <span class="visual-meta-tag">Automation Engine</span>
+            </div>
+            <h4>Smart Automation</h4>
+            <p>Connect devices and automate actions. We code local smart routines for offices, smart agriculture hubs,
+              and facilities.</p>
+            <div class="tech-spec-label">Automation Verticals:</div>
+            <ul class="premium-spec-list">
+              <li>Building ambient controllers</li>
+              <li>Soil irrigation triggers</li>
+              <li>Power distribution frameworks</li>
+              <li>Connected smart appliances</li>
+            </ul>
+            <a href="contact.html" class="card-action-btn">View Details</a>
+          </div>
+
+          <!-- Card 4: IoT Technologies Architecture[cite: 6] -->
+          <div class="premium-iot-card">
+            <div class="card-visual-header">
+              <i class="fas fa-network-wired"></i>
+              <span class="visual-meta-tag">Stack Core</span>
+            </div>
+            <h4>IoT Architecture</h4>
+            <p>Bridge physical hardware and cloud databases. We write lightweight microcode for controllers and compile
+              server dashboards.</p>
+            <div class="tech-spec-label">System Modules:</div>
+            <ul class="premium-spec-list">
+              <li>Embedded code (ESP32, Arduino)</li>
+              <li>Protocols (MQTT, WebSockets)</li>
+              <li>Telemetry databases (InfluxDB)</li>
+              <li>Reporting interfaces (Grafana)</li>
+            </ul>
+            <a href="contact.html" class="card-action-btn">View Details</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+  </script>
+</body>
+
+</html>

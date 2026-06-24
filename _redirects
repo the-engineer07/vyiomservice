@@ -1,0 +1,3 @@
+# Netlify redirects — Veyom Digital Solutions
+# Multi-page static site: NO catch-all rewrite needed.
+# Each .html file is served directly by Netlify.

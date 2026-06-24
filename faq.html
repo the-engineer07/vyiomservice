@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Find answers to common customer questions, process questions, and pricing questions about Vyiom's software engineering services.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="canonical" href="https://vyiom.com/faq.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html" class="active">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-grid"></div>
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow" style="color: var(--purple3);">Support</span>
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <p>Clear answers to common client questions about our deliverables, pricing, and system operations processes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: FAQ System -->
+  <section style="padding: 80px 0; background: var(--off); border-bottom: 1px solid var(--border);">
+    <div class="container" style="max-width: 900px;">
+
+      <div class="b2b-tabs-container" style="margin-top: 0;">
+        <div class="b2b-tabs-nav" style="justify-content: center;">
+          <button class="b2b-tab-btn active" onclick="switchFAQ(event, 'general')">Customer FAQs</button>
+          <button class="b2b-tab-btn" onclick="switchFAQ(event, 'process')">Process FAQs</button>
+          <button class="b2b-tab-btn" onclick="switchFAQ(event, 'pricing')">Pricing FAQs</button>
+        </div>
+
+        <!-- Tab 1: General Customer Questions -->
+        <div id="general" class="b2b-tab-panel active">
+          <div class="faq-accordion">
+
+            <div class="faq-item open">
+              <button class="faq-trigger">
+                <span class="faq-question">Do I own the source code after delivery?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">Yes, 100%. Unlike typical agencies that keep you locked into proprietary
+                  frameworks or templates, Vyiom transfers full intellectual property ownership. You receive the
+                  complete source code, asset folders, and developer documentation upon final deployment.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">What industries do you have experience working with?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">We regularly serve Healthcare, Finance, Education, Retail, Manufacturing, and
+                  Logistics companies. Our solutions range from HIPAA-compliant telehealth dashboards to custom
+                  inventory syncing and AI customer service automation.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">Can you integrate with our existing software tools?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">Yes. We specialize in custom API connections. We frequently sync client platforms
+                  with payment gateways (Stripe), CRMs (Salesforce, HubSpot), ERP modules (Odoo, SAP), and custom
+                  telemetry databases.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 2: Process Questions -->
+        <div id="process" class="b2b-tab-panel">
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">How long does a typical project take?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">Most web applications and websites launch in 4 to 6 weeks. More complex ERP/CRM
+                  integrations or industrial IoT systems typically take 8 to 12 weeks from strategy planning to final
+                  deployment.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">What does the development process look like?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">We follow a strict 6-step chronological workflow: (1) Discovery, (2) Planning, (3)
+                  Development, (4) Testing, (5) Delivery, and (6) Support. You receive access to a live staging URL to
+                  monitor sprint progression in real-time.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">How do you handle testing and QA?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">We perform strict quality testing across major mobile and desktop viewports. We
+                  run site audits to verify load speeds under 2 seconds, evaluate security keys, and confirm database
+                  validation constraints operate correctly.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 3: Pricing Questions -->
+        <div id="pricing" class="b2b-tab-panel">
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">Do you charge recurring template fees or hosting fees?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">No. Since we build static, custom architectures, there are zero template fees. We
+                  deploy directly to modern cloud hosts (Netlify, AWS) under your own accounts. You only pay for raw
+                  cloud computing usage (which is often free for mid-range static traffic).</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">How do you structure your project pricing?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">We quote flat, project-based rates based on requirements. There are no hourly
+                  surprises or bloated monthly retainer rules. We break payments into milestones: initial deposit,
+                  mid-sprint progress, and final project handover.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-trigger">
+                <span class="faq-question">What support plans are available after delivery?</span>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </button>
+              <div class="faq-body">
+                <p class="faq-answer">We include 30 days of free support with every deployment to fix minor anomalies.
+                  After that, we offer flexible support packages (e.g. 5, 10, or 20 hours per month) to manage future
+                  iterations or database updates.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: var(--dark); padding: 80px 0; color: #fff; text-align: center;">
+    <div class="container" style="max-width: 600px;">
+      <h2
+        style="font-family: 'Inter', sans-serif; font-size: clamp(24px, 3.5vw, 38px); font-weight: 600; margin-bottom: 16px; color: #fff;">
+        Have a specific question?</h2>
+      <p style="font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 32px;">Drop us a direct
+        message and our operations team will respond with a full response within 24 hours.</p>
+      <a href="contact.html" class="btn btn-purple">Submit An Inquiry</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+
+    // Switch FAQ tab panel
+    function switchFAQ(e, tabId) {
+      document.querySelectorAll('.b2b-tab-btn').forEach(btn => btn.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+
+      document.querySelectorAll('.b2b-tab-panel').forEach(panel => panel.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Bind Accordion triggers
+    document.querySelectorAll('.faq-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+
+</html>

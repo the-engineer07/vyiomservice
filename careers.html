@@ -1,0 +1,628 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Join Vyiom Digital Solutions — a focused digital engineering team building websites, AI systems, and web applications.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── HERO ── */
+    .car-hero {
+      background: var(--white);
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 120px;
+      border-bottom: 0px solid var(--border);
+    }
+
+    .car-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .car-hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 4.5vw, 60px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .car-hero-sub {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .car-hero-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 0px solid var(--border);
+    }
+
+    /* ── CULTURE VALUES ── */
+    .culture-sec {
+      background: var(--off);
+      padding: 100px 0;
+    }
+
+    .culture-header {
+      margin-bottom: 56px;
+    }
+
+    .culture-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .culture-card {
+      background: var(--white);
+      padding: 36px 28px;
+      border-top: 3px solid var(--purple);
+    }
+
+    .culture-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .culture-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── HOW WE WORK ── */
+    .how-sec {
+      background: var(--white);
+      padding: 100px 0;
+    }
+
+    .how-header {
+      margin-bottom: 56px;
+    }
+
+    .how-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .how-card {
+      background: var(--white);
+      padding: 40px 36px;
+      transition: background 0.2s;
+    }
+
+    .how-card:hover {
+      background: var(--off);
+    }
+
+    .how-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--purple);
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .how-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .how-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── OPEN ROLES (MINIMIZED HEIGHT) ── */
+    .roles-sec {
+      background: var(--dark);
+      padding: 40px 0;
+      /* MODIFIED: Tightened section padding significantly */
+    }
+
+    .empty-card {
+      background: var(--dark2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 32px 36px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .empty-icon {
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.15);
+      margin-bottom: 10px;
+    }
+
+    .empty-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .empty-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 0;
+      max-width: 360px;
+      margin: 0 auto 16px;
+    }
+
+    .notify-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: none;
+      color: #fff;
+      font-size: 13px;
+      padding: 10px 14px;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .notify-input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .notify-input:focus {
+      border-color: var(--purple);
+    }
+
+    .notify-btn {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .notify-btn:hover {
+      background: var(--purple2);
+    }
+
+    .speculative-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1.6;
+    }
+
+    .speculative-text a {
+      color: var(--purple3);
+      text-decoration: underline;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .car-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .culture-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .car-hero {
+        padding-top: calc(var(--nav-h) + 48px);
+        padding-bottom: 56px;
+      }
+
+      .culture-sec {
+        padding: 60px 0;
+      }
+
+      .how-sec {
+        padding: 60px 0;
+      }
+
+      .roles-sec {
+        padding: 24px 0;
+      }
+
+      /* MODIFIED: Compact mobile view padding */
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .empty-card {
+        padding: 24px 20px;
+      }
+
+      .notify-form {
+        flex-direction: column;
+        max-width: 100%;
+      }
+
+      .notify-input {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .notify-btn {
+        width: 100%;
+        padding: 12px;
+      }
+
+      .car-hero-right {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .car-hero h1 {
+        font-size: clamp(26px, 8vw, 40px);
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/careers.html">
+</head>
+
+<body>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="car-hero">
+    <div class="container">
+      <div class="car-hero-grid">
+        <div class="car-hero-left">
+          <span class="eyebrow">Careers</span>
+          <h1>Join a team that builds things that matter.</h1>
+          <p class="car-hero-sub">We're a small, senior team that moves fast and takes quality seriously. If you care
+            about craft, love solving real problems, and want your work to have a direct impact — you'll fit right in.
+          </p>
+          <a href="#roles" class="btn btn-purple">See Open Roles</a>
+        </div>
+        <div class="car-hero-right">
+          <img src="assets/images/work.jpg" alt="Career opportunity illustration" class="car-hero-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="culture-sec">
+    <div class="container">
+      <div class="culture-header">
+        <span class="eyebrow">Our Culture</span>
+        <h2>What it's like to work here</h2>
+      </div>
+      <div class="culture-grid">
+        <div class="culture-card">
+          <div class="culture-title">Ownership Over Everything</div>
+          <p class="culture-desc">We don't have layers of management. You own your work end-to-end — from the first line
+            of code to the client handover. That means real responsibility and real pride in what you ship.</p>
+        </div>
+        <div class="culture-card">
+          <div class="culture-title">Quality Without Compromise</div>
+          <p class="culture-desc">We'd rather take an extra day to get something right than ship something we're not
+            proud of. High standards aren't a burden here — they're the baseline.</p>
+        </div>
+        <div class="culture-card">
+          <div class="culture-title">Continuous Learning</div>
+          <p class="culture-desc">Technology moves fast. We stay ahead of it. You'll work with modern tools, tackle
+            interesting problems, and have the space to grow your skills in directions that matter to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-sec">
+    <div class="container">
+      <div class="how-header">
+        <span class="eyebrow">Day to Day</span>
+        <h2>How we work</h2>
+      </div>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">01</div>
+          <div class="how-title">Remote-First</div>
+          <p class="how-desc">We work remotely by default. No mandatory office hours, no micromanagement. We care about
+            output, not presence. You manage your time and deliver great work.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">02</div>
+          <div class="how-title">Direct Communication</div>
+          <p class="how-desc">No bureaucracy, no endless meetings. We communicate clearly and directly — async when
+            possible, synchronous when necessary. Your time is respected.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">03</div>
+          <div class="how-title">Real Projects, Real Impact</div>
+          <p class="how-desc">Every project we take on has a real client and a real business outcome. You'll see the
+            direct result of your work — and so will the people using it.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">04</div>
+          <div class="how-title">Grow With Us</div>
+          <p class="how-desc">As Vyiom grows, so do the people in it. We invest in our team's development and create
+            space for people to take on more responsibility as they prove themselves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFITS & PERKS ── -->
+  <section class="benefits-sec"
+    style="padding: 100px 0; background: var(--off); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div style="margin-bottom: 56px;">
+        <span class="eyebrow">Perks &amp; Benefits</span>
+        <h2
+          style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; color: var(--ink); letter-spacing: -0.02em;">
+          We invest in our people</h2>
+      </div>
+      <div class="grid-3">
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-house-laptop"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Remote Setup Stipend</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">We provide a WFH allowance to purchase
+            ergonomic furniture, monitors, or system upgrades to support your remote workplace.</p>
+        </div>
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Continuous Learning</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Access paid online classes, professional
+            certification courses, developer books, and technological event passes.</p>
+        </div>
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-calendar-check"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Flexible PTO</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Take paid time off when you need it. We
+            trust our team to manage their deliverables and take the space required to recharge.</p>
+        </div>
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-kit-medical"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Medical Coverage</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Comprehensive health insurance plans
+            covering medical expenses, consultations, and support systems for self and family.</p>
+        </div>
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-chart-line"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Performance Bonuses</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">Annual profit sharing, performance metrics
+            checks, and milestone project bonuses to reward clean, timely code delivery.</p>
+        </div>
+        <div class="glass-card" style="background: var(--white); border-color: var(--border);">
+          <div style="font-size: 24px; color: var(--purple); margin-bottom: 16px;"><i class="fas fa-users-gear"></i>
+          </div>
+          <h3
+            style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 10px;">
+            Clear Career Paths</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6;">No corporate layers. Structured pathways to
+            move into senior engineering, systems architecture, or leadership roles quickly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roles-sec" id="roles">
+    <div class="container">
+      <div class="empty-card">
+        <div class="empty-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="empty-title">No Current Openings</div>
+        <p class="empty-desc">We don't have any open roles right now, but we're always growing. Drop your email below
+          and we'll notify you when something comes up.</p>
+        <form class="notify-form" onsubmit="handleNotify(event)">
+          <input type="email" class="notify-input" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="notify-btn">Notify Me</button>
+        </form>
+        <p class="speculative-text">Interested in working with us regardless? Send a speculative application to <a
+            href="mailto:vyiomdigitalsolutions@gmail.com">vyiomdigitalsolutions@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" aria-label="LinkedIn" target="_blank"
+            rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" aria-label="WhatsApp" target="_blank"
+            rel="noopener"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon" aria-label="Phone"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon"
+            aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon" aria-label="Email"><i
+              class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+    document.querySelectorAll('.drawer-links a').forEach(a => a.addEventListener('click', () => tog(false)));
+
+    function handleNotify(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.notify-btn');
+      btn.textContent = 'Subscribed ✓';
+      btn.style.background = '#22c55e';
+      e.target.querySelector('input').value = '';
+      setTimeout(() => { btn.textContent = 'Notify Me'; btn.style.background = ''; }, 3000);
+    }
+  </script>
+</body>
+
+</html>

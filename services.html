@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Vyiom Digital Solutions</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <meta name="description" content="Comprehensive digital services — web development, AI automation, branding, data analytics, and IoT systems from Vyiom Digital Solutions.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://vyiom.com/services.html">
+
+  <!-- SEO: JSON-LD Service structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "Vyiom Digital Solutions",
+      "url": "https://vyiom.com",
+      "logo": "https://vyiom.com/assets/logo/logo1.png"
+    },
+    "serviceType": "Digital Engineering and Software Development Services",
+    "description": "Comprehensive digital engineering, custom software, AI automation, and branding design systems engineered for scale."
+  }
+  </script>
+
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── HERO ── */
+    .svc-hero {
+      position: relative;
+      min-height: 72vh;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .svc-hero-grid {
+      position: absolute; inset: 0; z-index: 1;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+    .svc-hero-flex {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      padding: calc(var(--nav-h) + 100px) 0 80px;
+    }
+    .svc-hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(36px, 4.5vw, 60px);
+      font-weight: 300; line-height: 1.15;
+      color: #fff; margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .svc-hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7; max-width: 540px;
+      margin-bottom: 32px;
+    }
+    .svc-hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .svc-hero-img-wrapper {
+      position: relative; width: 100%; height: 480px;
+      border-radius: var(--r); overflow: hidden;
+      box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+    }
+    .svc-hero-img-wrapper::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(147,51,234,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .svc-hero-img {
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0.85; transition: transform 0.5s ease;
+    }
+    .svc-hero-img-wrapper:hover .svc-hero-img { transform: scale(1.03); }
+    .hero-sep { height: 3px; background: var(--purple); }
+
+    /* ══════════════════════════════════════════
+       NVIDIA-STYLE TWO-PANEL SERVICE CATALOG
+    ══════════════════════════════════════════ */
+    .svc-catalog {
+      background: #f5f4f8;
+      border-bottom: 1px solid #ddd;
+    }
+    .svc-catalog-wrap {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 500px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    /* ── LEFT SIDEBAR ── */
+    .svc-sidebar {
+      background: #eeecf5;
+      border-right: 1px solid #ddd;
+      padding-top: 8px;
+    }
+    .svc-sidebar-btn {
+      display: block; width: 100%;
+      padding: 15px 22px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px; font-weight: 500;
+      color: #444;
+      background: none; border: none;
+      border-left: 3px solid transparent;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      text-align: left; cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-left-color 0.15s;
+    }
+    .svc-sidebar-btn:hover {
+      background: #e2ddf0;
+      color: var(--purple2);
+    }
+    .svc-sidebar-btn.active {
+      background: #fff;
+      color: var(--purple2);
+      font-weight: 700;
+      border-left-color: var(--purple);
+    }
+
+    /* ── RIGHT PANEL ── */
+    .svc-panels { position: relative; }
+    .svc-panel {
+      display: none;
+      padding: 40px 52px;
+      animation: panelIn 0.22s ease;
+    }
+    .svc-panel.active { display: block; }
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .svc-panel-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px; font-weight: 700;
+      color: #111;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 40px;
+    }
+    .svc-entry-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 700;
+      color: #111; text-decoration: none;
+      margin-bottom: 5px;
+      transition: color 0.15s;
+    }
+    .svc-entry-arrow {
+      color: var(--purple);
+      font-size: 14px; font-weight: 800;
+      display: inline-block;
+      transition: transform 0.18s;
+    }
+    .svc-entry-link:hover { color: var(--purple); }
+    .svc-entry-link:hover .svc-entry-arrow { transform: translateX(4px); }
+    .svc-entry-desc {
+      font-size: 13px; color: #555;
+      line-height: 1.55; margin: 0;
+    }
+
+    /* ── PROCESS SECTION ── */
+    .process-sec { background: var(--dark); padding: 60px 0; }
+    .proc-header { margin-bottom: 32px; }
+    .proc-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 600; color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .proc-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; position: relative;
+    }
+    .proc-steps::before {
+      content: ''; position: absolute;
+      top: 20px; left: 12%; right: 12%;
+      height: 1px; background: rgba(255,255,255,0.1); z-index: 0;
+    }
+    .proc-step { padding: 0 16px; position: relative; z-index: 1; }
+    .proc-num {
+      width: 40px; height: 40px;
+      border: 2px solid var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px; font-weight: 700;
+      color: var(--purple); margin-bottom: 16px;
+      background: var(--dark);
+    }
+    .proc-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px; font-weight: 600;
+      color: #fff; margin-bottom: 8px;
+    }
+    .proc-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* ── CTA PURPLE ── */
+    .cta-purple { background: var(--purple); padding: 80px 0; }
+    .cta-purple-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 40px; flex-wrap: wrap;
+    }
+    .cta-purple h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(24px, 3vw, 38px);
+      font-weight: 600; color: #fff;
+      letter-spacing: -0.02em; max-width: 560px;
+    }
+    .cta-purple p { font-size: 16px; color: rgba(255,255,255,0.7); margin-top: 10px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .svc-hero-flex { grid-template-columns: 1fr; gap: 40px; padding: calc(var(--nav-h) + 100px) 0 60px; }
+      .svc-hero-img-wrapper { height: 360px; }
+      .svc-catalog-wrap { grid-template-columns: 1fr; }
+      .svc-sidebar {
+        display: flex; flex-wrap: wrap;
+        border-right: none; border-bottom: 1px solid #ddd;
+        padding-top: 0;
+      }
+      .svc-sidebar-btn {
+        flex: 0 0 auto;
+        border-left: none; border-bottom: 3px solid transparent;
+        border-right: 1px solid rgba(0,0,0,0.06);
+        padding: 13px 16px; font-size: 12px;
+      }
+      .svc-sidebar-btn.active {
+        border-bottom-color: var(--purple);
+        border-left: none;
+        background: #fff;
+      }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .svc-panel { padding: 30px 24px; }
+      .proc-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .proc-steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .svc-hero { min-height: auto; }
+      .svc-hero-img-wrapper { height: 240px; }
+      .svc-grid { grid-template-columns: 1fr; gap: 22px; }
+      .svc-panel { padding: 20px 16px; }
+      .svc-sidebar-btn { font-size: 11px; padding: 12px 12px; }
+      .proc-steps { grid-template-columns: 1fr; }
+      .cta-purple { padding: 56px 0; }
+      .cta-purple-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Mobile drawer -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <span class="drawer-logo">Vyiom</span>
+    <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="drawer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="careers.html">Careers</a>
+    <a href="faq.html">FAQ</a>
+    <a href="resources.html">Resources</a>
+    <a href="support.html">Support</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+</div>
+
+<!-- Navbar -->
+<nav class="site-nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo/logo1.png" alt="Vyiom" class="nav-logo-img">
+      <span class="nav-logo-name">Vyiom</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="contact.html" class="nav-cta">Get in Touch</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="svc-hero">
+  <div class="svc-hero-grid"></div>
+  <div class="container">
+    <div class="svc-hero-flex">
+      <div class="svc-hero-content">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.5);">Our Services</span>
+        <h1>Comprehensive Digital Services for Modern Business.</h1>
+        <p class="svc-hero-sub">From a sharp marketing website to a full AI-powered automation stack — we build the digital infrastructure that lets your business operate at its best.</p>
+        <div class="svc-hero-btns">
+          <a href="#svc-catalog" class="btn btn-ghost">Explore Services</a>
+        </div>
+      </div>
+      <div class="svc-hero-img-wrapper">
+        <img src="assets/images/5834.jpg" alt="Digital Frameworks and Systems Architecture" class="svc-hero-img">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="hero-sep"></div>
+
+<!-- ══════════════════════════════════════════
+     NVIDIA-STYLE TWO-PANEL SERVICE CATALOG
+══════════════════════════════════════════ -->
+<section class="svc-catalog" id="svc-catalog" aria-label="Service catalog">
+  <div class="svc-catalog-wrap">
+
+    <!-- LEFT SIDEBAR NAV -->
+    <nav class="svc-sidebar" role="tablist" aria-label="Service categories">
+      <button class="svc-sidebar-btn active" data-panel="web"      role="tab" aria-selected="true">Web Development</button>
+      <button class="svc-sidebar-btn"        data-panel="software" role="tab" aria-selected="false">Software Development</button>
+      <button class="svc-sidebar-btn"        data-panel="ai"       role="tab" aria-selected="false">AI Automation</button>
+      <button class="svc-sidebar-btn"        data-panel="data"     role="tab" aria-selected="false">Data Analytics</button>
+      <button class="svc-sidebar-btn"        data-panel="iot"      role="tab" aria-selected="false">IoT Systems</button>
+      <button class="svc-sidebar-btn"        data-panel="brand"    role="tab" aria-selected="false">Branding &amp; Design</button>
+    </nav>
+
+    <!-- RIGHT CONTENT PANELS -->
+    <div class="svc-panels">
+
+      <!-- WEB DEVELOPMENT -->
+      <div class="svc-panel active" id="panel-web" role="tabpanel">
+        <h2 class="svc-panel-heading">Web Development</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="web-development.html" class="svc-entry-link">Business Websites <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Corporate sites, landing pages, and service portals designed to convert visitors and impress clients.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="web-development.html#web-apps" class="svc-entry-link">Custom Web Applications <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">SaaS platforms, customer portals, and booking engines built around your exact workflows.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="web-development.html" class="svc-entry-link">E-Commerce Stores <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Full-stack online stores with payment gateways, order management, and analytics integration.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="web-development.html#integrations" class="svc-entry-link">API &amp; System Integrations <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Connect CRMs, ERPs, payment processors, and third-party APIs into one unified platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOFTWARE DEVELOPMENT -->
+      <div class="svc-panel" id="panel-software" role="tabpanel">
+        <h2 class="svc-panel-heading">Software Development</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="software-development.html" class="svc-entry-link">Enterprise CRM Systems <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Custom CRM dashboards tracking leads, contacts, and pipeline performance in real time.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="software-development.html" class="svc-entry-link">ERP &amp; Business Platforms <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Integrated ERP tools for inventory, HR, finance, and operations — all in one system.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="software-development.html" class="svc-entry-link">HR &amp; Payroll Systems <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Employee management portals with attendance tracking, leave management, and payroll automation.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="software-development.html" class="svc-entry-link">Internal Workflow Tools <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Bespoke tools that replace spreadsheets and eliminate manual approval chains for good.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI AUTOMATION -->
+      <div class="svc-panel" id="panel-ai" role="tabpanel">
+        <h2 class="svc-panel-heading">AI Automation</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="ai-automation.html#whatsapp" class="svc-entry-link">AI Chatbots &amp; Assistants <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">WhatsApp and web chatbots handling FAQs, bookings, and lead qualification around the clock.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="ai-automation.html" class="svc-entry-link">Business Process Automation <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">OCR pipelines, auto-email handlers, and data entry bots that eliminate repetitive paperwork.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="ai-automation.html" class="svc-entry-link">AI-Powered Applications <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Recommendation engines, semantic search systems, and content generators for your platform.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="ai-automation.html" class="svc-entry-link">AI System Integration <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Connect LLM APIs to your existing CRM, ERP, or legacy database without a full rebuild.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATA ANALYTICS -->
+      <div class="svc-panel" id="panel-data" role="tabpanel">
+        <h2 class="svc-panel-heading">Data Analytics</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="data-analytics.html" class="svc-entry-link">Business Intelligence Dashboards <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Real-time executive dashboards and KPI monitoring for faster, data-backed decisions.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="data-analytics.html" class="svc-entry-link">Data Visualization <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Sales funnels, financial flow charts, and CPA dashboards built on live data streams.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="data-analytics.html" class="svc-entry-link">Data Engineering &amp; Pipelines <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">ETL workflows, cloud migrations, and schema design to unify all your data sources.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="data-analytics.html" class="svc-entry-link">Predictive Analytics <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">ML models forecasting sales demand, customer churn, and optimal inventory levels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IOT SYSTEMS -->
+      <div class="svc-panel" id="panel-iot" role="tabpanel">
+        <h2 class="svc-panel-heading">IoT Systems</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="iot-smart-systems.html" class="svc-entry-link">Smart Monitoring <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Wireless sensor arrays tracking temperature, humidity, energy, and asset location in real time.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="iot-smart-systems.html" class="svc-entry-link">Industrial IoT <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Predictive maintenance dashboards and Edge control panels to minimize factory downtime.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="iot-smart-systems.html" class="svc-entry-link">Smart Building Automation <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Automated routines for offices, agriculture, and smart power distribution grids.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="iot-smart-systems.html" class="svc-entry-link">Embedded Systems &amp; Firmware <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">ESP32/Arduino microcode, MQTT protocols, and real-time Grafana telemetry interfaces.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRANDING & DESIGN -->
+      <div class="svc-panel" id="panel-brand" role="tabpanel">
+        <h2 class="svc-panel-heading">Branding &amp; Design</h2>
+        <div class="svc-grid">
+          <div class="svc-entry">
+            <a href="branding-design.html" class="svc-entry-link">Brand Identity &amp; Logo Design <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Custom vector logos, brand guidelines, color palettes, and full typography kits.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="branding-design.html" class="svc-entry-link">UI/UX Design <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Figma wireframes, high-fidelity prototypes, and responsive design systems for web and mobile.</p>
+          </div>
+          <div class="svc-entry">
+            <a href="branding-design.html" class="svc-entry-link">Marketing &amp; Campaign Designs <span class="svc-entry-arrow">›</span></a>
+            <p class="svc-entry-desc">Social media templates, ad creatives, pitch decks, and corporate brochure packages.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /svc-panels -->
+  </div><!-- /svc-catalog-wrap -->
+</section>
+
+<!-- ── BENEFITS & OUTCOMES ── -->
+<section style="padding: 80px 0; background: var(--off); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 48px auto;">
+      <span class="eyebrow">Benefits &amp; Outcomes</span>
+      <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 600; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.02em;">Transforming operations into growth</h2>
+      <p style="font-size: 16px; color: var(--muted); line-height: 1.6;">We build technology systems designed to provide immediate business outcomes — reducing administrative overhead, boosting engagement, and securing your source code.</p>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-num">60%+</div>
+        <h3 class="metric-title">Performance Speed</h3>
+        <p class="metric-desc">Websites optimized for fast load speeds, improving SEO crawling rankings and increasing mobile checkouts.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">75%</div>
+        <h3 class="metric-title">Labor Automated</h3>
+        <p class="metric-desc">Bespoke workflows and bots handle repetitive data entry, scheduling, and invoice routing.</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">100%</div>
+        <h3 class="metric-title">Ownership Retained</h3>
+        <p class="metric-desc">Clean modular code fully owned by you — no monthly vendor lock-in or developer licensing fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW WE WORK TIMELINE ── -->
+<section style="padding: 100px 0; background: var(--white); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <span class="eyebrow">How We Work</span>
+    <h2 style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 600; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.02em;">A structured path from idea to deployment</h2>
+    <p style="font-size: 16px; color: var(--muted); max-width: 600px; margin-bottom: 32px;">We follow a rigorous 6-step engineering process to design, test, and deploy resilient digital systems on schedule.</p>
+    <div class="timeline-track">
+      <div class="timeline-step">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Discovery</h3>
+          <p class="timeline-desc">We begin by understanding your business model, customer friction points, and technical goals. We outline requirements and map immediate solution milestones.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Planning</h3>
+          <p class="timeline-desc">We map the system architecture, select the tech stack, write data schemas, and design visual UI wireframes ensuring alignment before code is written.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Development</h3>
+          <p class="timeline-desc">Our senior engineering team develops the codebase in agile, iterative sprints, providing you with continuous access to live prototype environments.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Testing</h3>
+          <p class="timeline-desc">We run strict quality checks across screen breakpoints, performance metrics, and validation reviews to catch bugs before launch.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">5</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Delivery</h3>
+          <p class="timeline-desc">We deploy to modern cloud CDNs, hook up domains, complete data handovers, and transfer 100% codebase ownership to you.</p>
+        </div>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot">6</div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Support</h3>
+          <p class="timeline-desc">Post-launch, we monitor operations telemetry, implement iterations, keep systems updated, and remain available for any support or enhancements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-purple">
+  <div class="container">
+    <div class="cta-purple-inner">
+      <div>
+        <h2>Let's build something great together.</h2>
+        <p>Tell us about your project and we'll respond within 24 hours.</p>
+      </div>
+      <a href="contact.html" class="btn btn-white">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer" style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+  <div class="container">
+    <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+      <div>
+        <a href="index.html" class="footer-logo-link" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+          <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+          <span class="footer-logo-name" style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+        </a>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">High-performance custom web development, software solutions, and AI automation workflows built for business scale.</p>
+        <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All rights reserved.</p>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Services</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+          <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+          <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+          <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+          <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+          <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Company</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+          <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+          <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+          <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+          <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">Resources</h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+          <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+          
+          <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div></div>
+      <div class="footer-socials">
+        <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+        <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  // Mobile drawer
+  const ov = document.getElementById('drawerOverlay');
+  const dr = document.getElementById('drawer');
+  const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+  document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+  document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+  ov.addEventListener('click', () => tog(false));
+  document.querySelectorAll('.drawer-links a').forEach(a => a.addEventListener('click', () => tog(false)));
+
+  // ── TWO-PANEL TAB SWITCHER ──
+  const buttons = document.querySelectorAll('.svc-sidebar-btn');
+  const panels  = document.querySelectorAll('.svc-panel');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Deactivate all
+      buttons.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p  => p.classList.remove('active'));
+
+      // Activate clicked
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      const target = document.getElementById('panel-' + btn.dataset.panel);
+      if (target) target.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

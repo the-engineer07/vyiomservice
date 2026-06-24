@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Explore real-world case studies detailing Vyiom's software engineering, AI automation integrations, and IoT deployments.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --accenture-purple: #a100ff;
+      --accenture-dark: #09090e;
+      --accenture-zinc: #12121a;
+      --accenture-border: rgba(255, 255, 255, 0.08);
+      --text-muted: #8a8a93;
+    }
+
+    body {
+      background-color: var(--accenture-dark);
+      color: #ffffff;
+    }
+
+    /* Premium Accenture-Style Case Study Layout */
+    .case-section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 50px;
+    }
+
+    .case-studies-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-top: 20px;
+    }
+
+    .case-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--accenture-zinc);
+      border: 1px solid var(--accenture-border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accenture-purple);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(161, 0, 255, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .case-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    @media(min-width: 992px) {
+      .case-card {
+        flex-direction: row;
+        min-height: 400px;
+      }
+
+      .case-img-side {
+        width: 45%;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .case-content-side {
+        width: 55%;
+        padding: 50px;
+      }
+
+      /* Alternating Layout Pattern */
+      .case-card:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .case-img-side {
+      background-size: cover;
+      background-position: center;
+      min-height: 300px;
+      transition: transform 0.8s ease;
+    }
+
+    .case-card:hover .case-img-side {
+      transform: scale(1.03);
+    }
+
+    .case-content-side {
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .case-tag-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .case-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(161, 0, 255, 0.1);
+      border: 1px solid rgba(161, 0, 255, 0.2);
+      color: #d199ff;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 2px;
+    }
+
+    .case-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .case-summary {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #c1c1ca;
+      margin-bottom: 30px;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      border-top: 1px solid var(--accenture-border);
+      padding-top: 24px;
+    }
+
+    .case-metric {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-m-val {
+      font-family: 'Inter', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .case-m-lbl {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .read-more-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .read-more-link i {
+      color: var(--accenture-purple);
+      transition: transform 0.3s;
+    }
+
+    .case-card:hover .read-more-link i {
+      transform: translateX(6px);
+    }
+
+    /* Accenture Deep-Dive Interactive Overlay System */
+    .case-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 5, 8, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 24px;
+    }
+
+    .case-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-body {
+      background: var(--accenture-zinc);
+      border: 1px solid var(--accenture-border);
+      width: 100%;
+      max-width: 950px;
+      max-height: 90vh;
+      border-radius: 4px;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(40px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .case-modal.active .modal-body {
+      transform: translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--accenture-border);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      border-color: var(--accenture-purple);
+      transform: rotate(90deg);
+    }
+
+    .modal-hero-img {
+      height: 320px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .modal-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(9, 9, 14, 0.1), var(--accenture-zinc));
+    }
+
+    .modal-header-text {
+      position: absolute;
+      bottom: 32px;
+      left: 40px;
+      right: 40px;
+    }
+
+    .modal-header-text h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      margin-top: 12px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .modal-main-content {
+      padding: 48px 40px;
+    }
+
+    .modal-section {
+      margin-bottom: 40px;
+    }
+
+    .modal-section h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accenture-purple);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .modal-section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #c1c1ca;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .modal-section ul {
+      padding-left: 20px;
+      font-size: 15px;
+      color: #c1c1ca;
+      line-height: 1.7;
+    }
+
+    .modal-section li {
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .modal-metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 32px;
+      border: 1px solid var(--accenture-border);
+      margin-bottom: 40px;
+    }
+
+    .modal-m-card {
+      text-align: left;
+    }
+
+    .modal-m-card div:first-child {
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .modal-m-card div:last-child {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/case-studies.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html" class="active">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero" style="background: var(--accenture-dark); padding: 120px 0 60px 0;">
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow"
+          style="color: var(--accenture-purple); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;">Case
+          Studies Matrix</span>
+        <h1
+          style="font-family: 'Inter', sans-serif; font-size: clamp(36px, 5vw, 64px); font-weight: 700; color: #fff; margin-top: 10px;">
+          Digital <span>Transformation</span> Realized</h1>
+        <p class="case-section-desc">Explore how we scale operational performance, architect next-generation enterprise
+          software ecosystems, and implement structural efficiencies for industry leaders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: Case Studies List -->
+  <section style="padding: 60px 0 120px 0; background: var(--accenture-dark);">
+    <div class="container" style="max-width: 1200px;">
+
+      <div class="case-studies-grid">
+
+        <!-- Enterprise Architecture Case Study: Omnichannel Commerce Core -->
+        <div class="case-card" onclick="openCaseModal('omnichannel')">
+          <div class="case-img-side"
+            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');">
+          </div>
+          <div class="case-content-side">
+            <div>
+              <div class="case-tag-row">
+                <span class="case-tag">Enterprise Software</span>
+                <span class="case-tag">Architecture Scale</span>
+              </div>
+              <h2 class="case-title">Omnichannel Retail Infrastructure Modernization</h2>
+              <p class="case-summary">Engineered a unified transactional core software suite consolidating 14
+                distributed warehouse logistics databases, live in-store POS configurations, and multi-country online
+                retail engines into an integrated environment.</p>
+            </div>
+            <div>
+              <div class="case-metrics">
+                <div class="case-metric"><span class="case-m-val">42%</span><span class="case-m-lbl">Inventory Sync
+                    Optimization</span></div>
+                <div class="case-metric"><span class="case-m-val">2.1x</span><span class="case-m-lbl">Order Processing
+                    Speed Velocity</span></div>
+                <div class="case-metric"><span class="case-m-val">$180k+</span><span class="case-m-lbl">Annualized
+                    Resource Savings</span></div>
+              </div>
+              <div class="read-more-link">View Case Strategy <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Operations Automation Case Study: AI WhatsApp Pipeline -->
+        <div class="case-card" onclick="openCaseModal('retail')">
+          <div class="case-img-side" style="background-image: url('assets/images/roboand hand.jpg');"></div>
+          <div class="case-content-side">
+            <div>
+              <div class="case-tag-row">
+                <span class="case-tag">Conversational AI</span>
+                <span class="case-tag">Process Automation</span>
+              </div>
+              <h2 class="case-title">AI WhatsApp Lifecycle Automation Framework</h2>
+              <p class="case-summary">Architected context-aware conversational parsing layers utilizing OpenAI models
+                directly alongside official corporate API infrastructure to manage customer support desks and qualify
+                transactional buyer funnels automatically.</p>
+            </div>
+            <div>
+              <div class="case-metrics">
+                <div class="case-metric"><span class="case-m-val">74%</span><span class="case-m-lbl">Autonomous Query
+                    Resolution</span></div>
+                <div class="case-metric"><span class="case-m-val">&lt; 3s</span><span class="case-m-lbl">Inbound Latency
+                    Slashed</span></div>
+                <div class="case-metric"><span class="case-m-val">18%</span><span class="case-m-lbl">Incremental Revenue
+                    Lift</span></div>
+              </div>
+              <div class="read-more-link">View Case Strategy <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate B2B Software Architecture Case Study: Procurement Automation Engine -->
+        <div class="case-card" onclick="openCaseModal('procurement')">
+          <div class="case-img-side"
+            style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80');">
+          </div>
+          <div class="case-content-side">
+            <div>
+              <div class="case-tag-row">
+                <span class="case-tag">B2B Core Systems</span>
+                <span class="case-tag">Strategic Sourcing</span>
+              </div>
+              <h2 class="case-title">Automated B2B Procurement Optimization Platform</h2>
+              <p class="case-summary">Deployed a secure multi-tenant cloud application framework handling internal asset
+                allocation flows, third-party vendor tracking logs, dynamic master agreement templates, and cross-border
+                invoicing compliance layers.</p>
+            </div>
+            <div>
+              <div class="case-metrics">
+                <div class="case-metric"><span class="case-m-val">80%</span><span class="case-m-lbl">Onboarding Lag
+                    Reduced</span></div>
+                <div class="case-metric"><span class="case-m-val">100%</span><span class="case-m-lbl">Regulatory
+                    Compliance</span></div>
+                <div class="case-metric"><span class="case-m-val">12k+</span><span class="case-m-lbl">Enterprise Users
+                    Synced</span></div>
+              </div>
+              <div class="read-more-link">View Case Strategy <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Factory Telemetry System Case Study: Industrial Edge System -->
+        <div class="case-card" onclick="openCaseModal('iiot')">
+          <div class="case-img-side" style="background-image: url('assets/images/earth.jpg');"></div>
+          <div class="case-content-side">
+            <div>
+              <div class="case-tag-row">
+                <span class="case-tag">Industrial IoT</span>
+                <span class="case-tag">Predictive Analytics</span>
+              </div>
+              <h2 class="case-title">IIoT Edge Intelligence &amp; Plant Diagnostics</h2>
+              <p class="case-summary">Designed real-time MQTT telemetry networks utilizing specialized firmware profiles
+                deployed onto ESP32 microcontroller arrays to monitor physical equipment variations and calculate risk
+                parameters within cloud dashboard layers.</p>
+            </div>
+            <div>
+              <div class="case-metrics">
+                <div class="case-metric"><span class="case-m-val">30%</span><span class="case-m-lbl">Unscheduled
+                    Downtime Cut</span></div>
+                <div class="case-metric"><span class="case-m-val">100ms</span><span class="case-m-lbl">Pipeline Data
+                    Latency</span></div>
+                <div class="case-metric"><span class="case-m-val">3 hr</span><span class="case-m-lbl">Anomalous
+                    Predictive Padding</span></div>
+              </div>
+              <div class="read-more-link">View Case Strategy <i class="fas fa-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Case Study Details Modal Window -->
+  <div class="case-modal" id="caseStudyModal" onclick="closeCaseModal(event)">
+    <div class="modal-body" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="document.getElementById('caseStudyModal').classList.remove('active')"><i
+          class="fas fa-times"></i></button>
+      <div class="modal-hero-img" id="modalHeroImg">
+        <div class="modal-hero-overlay"></div>
+        <div class="modal-header-text">
+          <span id="modalTag" class="case-tag"
+            style="background:var(--accenture-purple); color:#fff; border:none;"></span>
+          <h2 id="modalTitle"></h2>
+        </div>
+      </div>
+      <div class="modal-main-content">
+        <div class="modal-metrics-strip" id="modalMetrics">
+          <!-- Injected via JavaScript -->
+        </div>
+        <div class="modal-section">
+          <h3>Operational Imperative &amp; Market Friction</h3>
+          <p id="modalChallenge"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Strategic Digital Response</h3>
+          <p id="modalApproach"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Technical System Architecture &amp; Enterprise Governance</h3>
+          <ul id="modalArchitecture">
+            <!-- Injected via JavaScript -->
+          </ul>
+        </div>
+        <div class="modal-section">
+          <h3>Quantified Business Transformation Value</h3>
+          <p id="modalImpact"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section
+    style="background: #000000; padding: 100px 0; text-align: center; border-top: 1px solid var(--accenture-border);">
+    <div class="container" style="max-width: 650px;">
+      <h2
+        style="font-family: 'Inter', sans-serif; font-size: clamp(28px, 4vw, 42px); font-weight: 600; margin-bottom: 20px; color: #fff;">
+        Let's engineer structural organizational scale</h2>
+      <p style="font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 40px;">Collaborate with our
+        solution architects to analyze your operational dependencies and design custom software strategies.</p>
+      <a href="contact.html" class="btn btn-purple"
+        style="display:inline-block; padding:14px 36px; background:var(--accenture-purple); color:#fff; border-radius:2px; text-decoration:none; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; font-size:13px;">Initiate
+        Strategy Consult</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"
+    style="background: var(--accenture-dark); border-top: 1px solid var(--accenture-border); padding: 50px 0 20px 0;">
+    <!-- Footer contents remain intact -->
+  </footer>
+
+  <script>
+    // Navbar scroll control
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    // Mobile drawer controls
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+
+    // Case Studies Comprehensive Data Dictionary
+    const caseData = {
+      omnichannel: {
+        tag: "Enterprise Software / Architecture Scale",
+        title: "Omnichannel Retail Infrastructure Modernization",
+        bgImg: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+        metrics: [
+          { val: "42%", label: "Inventory Sync Optimization" },
+          { val: "2.1x", label: "Order Processing Speed Velocity" },
+          { val: "$180k+", label: "Annualized Resource Savings" }
+        ],
+        challenge: "A distributed retail group faced severe organizational inefficiencies due to disparate stock records across regional centers. Disconnects between in-store checkouts, local storage hubs, and customer channels frequently led to order data loss, picking delays, and wasted overhead.",
+        approach: "We designed a robust central ERP engine to standardize distributed stock signals, handle regional cross-allocations, and aggregate customer processing pipelines through a singular web environment.",
+        architecture: [
+          "Implemented real-time state synchronization micro-services to monitor inventory availability across multi-node geographic locations.",
+          "Engineered rule-based automated provisioning loops that generate vendor purchase tracking assets when stock balances dip below threshold calculations.",
+          "Deployed fine-grained role-based access tokens (RBAC) to decouple reporting structures across executive, operations, and fulfillment divisions securely."
+        ],
+        impact: "The solution unified multi-point operational data visibility. Capital locked in static warehouse buffer configurations decreased by 42%, drastically improving order cycle times for international customers."
+      },
+      retail: {
+        tag: "Conversational AI / Process Automation",
+        title: "AI WhatsApp Lifecycle Automation Framework",
+        bgImg: "assets/images/roboand hand.jpg",
+        metrics: [
+          { val: "74%", label: "Autonomous Query Resolution" },
+          { val: "< 3s", label: "Inbound Latency Slashed" },
+          { val: "18%", label: "Incremental Revenue Lift" }
+        ],
+        challenge: "A cross-border digital platform saw high support cart friction during heavy transaction seasons. Customer teams were overwhelmed handling manual post-purchase delivery and tracking information logs, degrading brand retention rates.",
+        approach: "We integrated advanced natural language context processing layers directly with enterprise messaging gateways, implementing shipping status integrations and personalized incentive systems.",
+        architecture: [
+          "Wired secure webhooks mapping live backend commerce systems with external chat endpoints to generate contextual automated order tracking responses.",
+          "Configured precise query filtering boundaries to maintain secure operational parameters during automated inventory inquiries.",
+          "Optimized infrastructure payload routing to maintain cost-efficient runtime processing and predictable operational margins."
+        ],
+        impact: "74% of high-volume incoming customer service touchpoints were successfully handled by the automated conversational engine, increasing client conversions by 18% through automated retargeting incentives."
+      },
+      procurement: {
+        tag: "B2B Core Systems / Strategic Sourcing",
+        title: "Automated B2B Procurement Optimization Platform",
+        bgImg: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+        metrics: [
+          { val: "80%", label: "Onboarding Lag Reduced" },
+          { val: "100%", label: "Regulatory Compliance" },
+          { val: "12k+", label: "Enterprise Users Synced" }
+        ],
+        challenge: "A corporate operations partner suffered extensive processing delays while navigating fragmented supplier agreements, manual expense ledger sheets, and changing multi-regional tracking standards across different contract nodes.",
+        approach: "We engineered a secure cloud system optimized around dynamic vendor onboarding milestones, encrypted digital sign-off flows, and automatic localized invoice generation pipelines.",
+        architecture: [
+          "Created an automated document generation engine to transform vendor operational parameters into structured legal PDF master assets securely.",
+          "Designed asynchronous task workers to match field scheduling data against partner invoice entries, validating historical operational logs.",
+          "Deployed immutable database auditing ledgers to record internal resource logs, providing comprehensive traceability for financial reviews."
+        ],
+        impact: "Reduced supplier onboarding wait cycles by 80% while establishing an automated and compliant transaction architecture across different corporate units."
+      },
+      iiot: {
+        tag: "Industrial IoT / Predictive Analytics",
+        title: "IIoT Edge Intelligence & Plant Diagnostics",
+        bgImg: "assets/images/earth.jpg",
+        metrics: [
+          { val: "30%", label: "Unscheduled Downtime Cut" },
+          { val: "100ms", label: "Pipeline Data Latency" },
+          { val: "3 hr", label: "Anomalous Predictive Padding" }
+        ],
+        challenge: "A continuous production plant faced expensive manufacturing losses due to sudden thermal wear on core mechanics and a lack of granular asset diagnostics.",
+        approach: "We deployed low-power edge microcontroller arrays running custom firmware connected to real-time telemetry processing channels and interactive analysis modules.",
+        architecture: [
+          "Programmed energy-efficient sensor firmware to broadcast continuous asset status updates over telemetry channels.",
+          "Optimized time-series database configurations designed to securely process thousands of transactional diagnostics per second.",
+          "Wired event listeners to trigger immediate operational alerts the moment telemetry readings deviate from standard historical ranges."
+        ],
+        impact: "Delivered constant visibility into equipment conditions, mitigating unexpected processing failures through predictive operational monitoring alerts."
+      }
+    };
+
+    // Modal Interactive Controller Actions
+    function openCaseModal(key) {
+      const data = caseData[key];
+      if (!data) return;
+
+      document.getElementById('modalTag').innerText = data.tag;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalHeroImg').style.backgroundImage = `url('${data.bgImg}')`;
+      document.getElementById('modalChallenge').innerText = data.challenge;
+      document.getElementById('modalApproach').innerText = data.approach;
+      document.getElementById('modalImpact').innerText = data.impact;
+
+      // Build metrics strip
+      const metricsContainer = document.getElementById('modalMetrics');
+      metricsContainer.innerHTML = '';
+      data.metrics.forEach(m => {
+        metricsContainer.innerHTML += `
+        <div class="modal-m-card">
+          <div>${m.val}</div>
+          <div>${m.label}</div>
+        </div>`;
+      });
+
+      // Build architecture bullet list
+      const archContainer = document.getElementById('modalArchitecture');
+      archContainer.innerHTML = '';
+      data.architecture.forEach(item => {
+        archContainer.innerHTML += `<li>${item}</li>`;
+      });
+
+      // Show Modal Window
+      document.getElementById('caseStudyModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseModal(e) {
+      document.getElementById('caseStudyModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+
+</html>

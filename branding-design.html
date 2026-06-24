@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branding &amp; Designs — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Build a strong visual identity. Create custom vector logo systems, brand guidelines, visual style kits, and interactive user UI/UX wireframes.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Premium layout styles inspired by image_fa31e6.jpg */
+    .cozy-dark-section {
+      background-color: #1a1a1a;
+      /* Rich minimalist deep dark canvas */
+      color: #ffffff;
+      padding: 120px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cozy-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Asymmetric Hero Split Grid Layout */
+    .cozy-split-header {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 40px;
+      margin-bottom: 90px;
+      align-items: start;
+    }
+
+    .cozy-meta-left {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cozy-meta-left .index-num {
+      font-size: 13px;
+      color: #76b900;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .cozy-meta-left .section-name {
+      font-size: 14px;
+      color: #888888;
+      text-transform: capitalize;
+      letter-spacing: 0.02em;
+    }
+
+    .cozy-content-right {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cozy-content-right h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height: 1.3;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .cozy-content-right p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #b0b0b0;
+      max-width: 580px;
+      margin: 0;
+    }
+
+    /* Minimalist Pill CTA Button wrapper */
+    .cozy-btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 24px;
+      border-radius: 30px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .cozy-btn-pill:hover {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    .cozy-btn-pill .arrow-circle {
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    /* Balanced Side-by-Side Dual Deck */
+    .cozy-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 120px;
+    }
+
+    /* High-contrast list content framework card */
+    .cozy-text-card {
+      background: #fbf6f0;
+      /* Soft sand-bone contrast tint background */
+      color: #1a1a1a;
+      border-radius: 28px;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cozy-text-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 32px 0;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    .cozy-spec-group {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cozy-spec-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .cozy-spec-item i {
+      color: #76b900;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .cozy-spec-details h5 {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+
+    .cozy-spec-details p {
+      font-size: 13px;
+      color: #666666;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Clean Image Frame Box Wrapper with Image integration support */
+    .cozy-image-frame {
+      border-radius: 28px;
+      overflow: hidden;
+      height: 100%;
+      min-height: 440px;
+      background: #252525;
+      position: relative;
+    }
+
+    /* Fallback stylized micro-mesh design overlay */
+    .cozy-image-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .cozy-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .cozy-image-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .frame-caption-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      z-index: 2;
+      background: rgba(26, 26, 26, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 991px) {
+
+      .cozy-split-header,
+      .cozy-showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .cozy-text-card {
+        padding: 32px;
+      }
+
+      .cozy-image-frame {
+        min-height: 320px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/branding-design.html">
+</head>
+
+<body>
+
+  <!-- Slide-out mobile drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <!-- Header navbar -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom logo" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-grid"></div>
+    <div class="container">
+      <div class="subpage-hero-content">
+        <span class="eyebrow" style="color: #76b900;">06. Service detail</span>
+        <h1>Branding &amp; <span style="color: #76b900;">Designs</span></h1>
+        <p>Build A Strong Digital Identity. We create memorable brand experiences that communicate your business values
+          and connect with your audience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Block: Redesigned Capabilities Segment[cite: 7] -->
+  <section class="cozy-dark-section">
+    <div class="cozy-container">
+
+      <!-- Module 01: Core Systems Split[cite: 7] -->
+      <div class="cozy-split-header">
+        <div class="cozy-meta-left">
+          <span class="index-num">(01)</span>
+          <span class="section-name">Capabilities</span>
+        </div>
+        <div class="cozy-content-right">
+          <h2>Our mission is to construct optimal environments for user growth, where target profiles easily interface
+            with pristine layout design.</h2>
+          <p>We provide comprehensive design support, establishing modern style guidelines, functional wireframes, and
+            creative asset kits that set your platform apart from industry clutter.</p>
+          <a href="contact.html" class="cozy-btn-pill">
+            <span>Explore Architecture</span>
+            <span class="arrow-circle"><i class="fas fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Showcase Architecture 01 Dual Grid[cite: 7] -->
+      <div class="cozy-showcase-grid">
+        <!-- High Contrast Card Content[cite: 7] -->
+        <div class="cozy-text-card">
+          <h3>Brand Strategy System</h3>
+          <div class="cozy-spec-group">
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Custom Vector Identity</h5>
+                <p>Tailored logo assets built to scale infinitely across digital products and printed frameworks.</p>
+              </div>
+            </div>
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Cohesive Corporate Guidelines</h5>
+                <p>Detailed color palettes (HEX, HSL) paired with strict layout spacing rules to maintain visual equity.
+                </p>
+              </div>
+            </div>
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Digital Asset Integration</h5>
+                <p>Streamlined layout optimization ensuring typography styles balance harmoniously with visual kits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Rounded Media Frame with integrated Image tag[cite: 7] -->
+        <div class="cozy-image-frame">
+          <img src="assets/images/group.jpg" alt="Visual Identity Architecture Showcase"
+            onerror="this.style.display='none';">
+          <div class="frame-caption-tag">Visual Identity Architecture</div>
+        </div>
+      </div>
+
+      <!-- Module 02: Digital Spaces Split[cite: 7] -->
+      <div class="cozy-split-header">
+        <div class="cozy-meta-left">
+          <span class="index-num">(02)</span>
+          <span class="section-name">UI/UX Layouts</span>
+        </div>
+        <div class="cozy-content-right">
+          <h2>Every layout framework should feel natural, responsive, and seamlessly aligned with real-time customer
+            behavior vectors.</h2>
+          <p>Our structures focus heavily on deep research, mapping detailed user patterns into clean high-fidelity
+            prototypes that drive high conversions across viewports.</p>
+        </div>
+      </div>
+
+      <!-- Showcase Architecture 02 Dual Grid[cite: 7] -->
+      <div class="cozy-showcase-grid">
+        <!-- Rounded Media Frame with integrated Image tag[cite: 7] -->
+        <div class="cozy-image-frame">
+          <img src="assets/images/fr.jpg" alt="High-Fidelity UI/UX Canvas Mockup" onerror="this.style.display='none';">
+          <div class="frame-caption-tag">High-Fidelity Mockups Canvas</div>
+        </div>
+        <!-- High Contrast Card Content[cite: 7] -->
+        <div class="cozy-text-card">
+          <h3>User Experience Framework</h3>
+          <div class="cozy-spec-group">
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Interactive Wireframing</h5>
+                <p>Clean layout prototypes drafted to configure user workflows before final deployment.</p>
+              </div>
+            </div>
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Modular Design Ecosystems</h5>
+                <p>Reusable UI component architecture optimized directly within cross-platform Figma setups.</p>
+              </div>
+            </div>
+            <div class="cozy-spec-item">
+              <i class="far fa-star"></i>
+              <div class="cozy-spec-details">
+                <h5>Growth Marketing Materials</h5>
+                <p>Beautiful campaign assets, social cards, and executive pitch decks built to convert.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+  </script>
+</body>
+
+</html>

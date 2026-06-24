@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Vyiom Digital Solutions</title>
+  <meta name="description"
+    content="Get in touch with Vyiom Digital Solutions. Tell us about your project and we'll respond within 24 hours.">
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ── BASE CONTAINER & VARIABLES ── */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* ── HERO ── */
+    .contact-hero {
+      background: var(--white);
+      padding-top: calc(var(--nav-h) + 40px);
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 5vw, 68px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    /* ── CONTACT GRID (MOBILE FIRST) ── */
+    .contact-sec {
+      background: var(--white);
+      padding: 40px 0 60px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Single column layout on mobile */
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--purple);
+    }
+
+    .info-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .info-value a {
+      color: var(--ink);
+      transition: color 0.2s;
+    }
+
+    .info-value a:hover {
+      color: var(--purple);
+    }
+
+    .contact-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .contact-socials a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .contact-socials a:hover {
+      background: var(--purple);
+      color: #fff;
+      border-color: var(--purple);
+    }
+
+    /* ── FORM CARD (MOBILE FIRST) ── */
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 30px 20px;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* Stack inputs cleanly on mobile */
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .form-group label span {
+      color: var(--purple);
+    }
+
+    .form-input,
+    .form-textarea {
+      background: var(--off);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 0;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+      -webkit-appearance: none;
+      /* Prevents iOS default styling bugs */
+      appearance: none;
+      /* Standard property for all browsers */
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--purple);
+      background: var(--white);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .chips-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .chip {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      border: 1px solid var(--border2);
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+      background: var(--white);
+    }
+
+    .chip:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+    }
+
+    .chip.on {
+      background: var(--purple);
+      color: #fff;
+      border-color: var(--purple);
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .form-submit:hover {
+      background: var(--purple2);
+      transform: translateY(-1px);
+    }
+
+    .form-submit:disabled {
+      background: var(--muted2);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE DESKTOP ENHANCEMENTS (768px and up) ── */
+    @media (min-width: 768px) {
+      .contact-hero {
+        padding-top: calc(var(--nav-h) + 80px);
+        padding-bottom: 64px;
+      }
+
+      .contact-sec {
+        padding: 80px 0 100px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1.4fr;
+        gap: 64px;
+      }
+
+      .contact-form-card {
+        padding: 48px 40px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 16px;
+      }
+
+      .form-group {
+        margin-bottom: 16px;
+      }
+
+      .contact-info h2 {
+        font-size: 26px;
+        margin-bottom: 32px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/contact.html">
+</head>
+
+<body>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <nav class="site-nav scrolled" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's start a conversation.</h1>
+      <p class="contact-hero-sub">Tell us about your project. We'll respond within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="contact-sec">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="info-label">Phone</div>
+                <div class="info-value"><a href="tel:+919342732906">+91 9342732906</a></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="info-label">Email</div>
+                <div class="info-value"><a
+                    href="mailto:vyiomdigitalsolutions@gmail.com">vyiomdigitalsolutions@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div class="info-label">Location</div>
+                <div class="info-value">India</div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/company/vyiom" aria-label="LinkedIn" target="_blank" rel="noopener"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/919342732906" aria-label="WhatsApp" target="_blank" rel="noopener"><i
+                class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" aria-label="Instagram" target="_blank"
+              rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:vyiomdigitalsolutions@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <form id="form" novalidate>
+            <input type="hidden" name="subject" value="New Project Inquiry — Vyiom Website">
+            <input type="hidden" name="from_name" value="Vyiom Portal">
+            <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Name <span>*</span></label>
+                <input type="text" id="fname" name="name" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="femail">Email <span>*</span></label>
+                <input type="email" id="femail" name="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fphone">Phone</label>
+                <input type="tel" id="fphone" name="phone" class="form-input" placeholder="+91 00000 00000">
+              </div>
+              <div class="form-group">
+                <label for="fcompany">Company</label>
+                <input type="text" id="fcompany" name="company" class="form-input" placeholder="Your company">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fcompany-segment">Company Segment <span>*</span></label>
+                <select id="fcompany-segment" name="segment" class="form-input"
+                  style="height: 46px; background-color: var(--off); border: 1px solid var(--border); -webkit-appearance: none; appearance: none;"
+                  required>
+                  <option value="" disabled selected>Select your segment</option>
+                  <option value="Startup">Startup</option>
+                  <option value="Small Business">Small Business</option>
+                  <option value="Enterprise">Enterprise</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fbudget">Project Budget</label>
+                <select id="fbudget" name="budget" class="form-input"
+                  style="height: 46px; background-color: var(--off); border: 1px solid var(--border); -webkit-appearance: none; appearance: none;">
+                  <option value="" selected>Select budget range</option>
+                  <option value="Less than $5k">Less than $5k</option>
+                  <option value="$5k - $20k">$5k - $20k</option>
+                  <option value="$20k - $50k">$20k - $50k</option>
+                  <option value="$50k+">$50k+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="chips-label">Service Interested In</div>
+            <div class="chips">
+              <span class="chip" data-v="Web Development" onclick="toggleChip(this)">Web Development</span>
+              <span class="chip" data-v="Web Application" onclick="toggleChip(this)">Web Application</span>
+              <span class="chip" data-v="AI & Automation" onclick="toggleChip(this)">AI &amp; Automation</span>
+              <span class="chip" data-v="WhatsApp Bot" onclick="toggleChip(this)">WhatsApp Bot</span>
+              <span class="chip" data-v="Branding & Design" onclick="toggleChip(this)">Branding &amp; Design</span>
+              <span class="chip" data-v="SEO" onclick="toggleChip(this)">SEO</span>
+              <span class="chip" data-v="IoT Systems" onclick="toggleChip(this)">IoT Systems</span>
+              <span class="chip" data-v="Other" onclick="toggleChip(this)">Other</span>
+            </div>
+            <input type="hidden" id="selectedServices" name="services">
+
+            <div class="form-group">
+              <label for="fmessage">Project Description <span>*</span></label>
+              <textarea id="fmessage" name="message" class="form-textarea" placeholder="Tell us about your project..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call us"><i class="fas fa-phone"></i></a>
+
+  <script>
+    // UI logic
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+
+    function toggleChip(el) {
+      el.classList.toggle('on');
+      const vals = [...document.querySelectorAll('.chip.on')].map(c => c.dataset.v);
+      document.getElementById('selectedServices').value = vals.join(', ');
+    }
+
+    // Secure Submission Logic via Netlify Serverless Proxy Function
+    const form = document.getElementById('form');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+      if (form.elements['botcheck'] && form.elements['botcheck'].checked) return;
+
+      const formData = new FormData(form);
+      formData.delete('botcheck');
+
+      const payload = Object.fromEntries(formData);
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch("/.netlify/functions/submit-form", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.status === 404) {
+          throw new Error("Netlify back-end function file not found. Check your deployment folder structural hierarchy.");
+        }
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          alert("Success! Your message has been sent.");
+          form.reset();
+          document.querySelectorAll('.chip.on').forEach(c => c.classList.remove('on'));
+          document.getElementById('selectedServices').value = '';
+        } else {
+          console.error("API error layout response:", data);
+          alert(`Submission Error: ${data.message || "The submission request rejected your field formats."}`);
+        }
+
+      } catch (error) {
+        console.error("Operational transmission crash:", error);
+        alert(`System Error: ${error.message || "Failed to make a server request connection."}`);
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+
+</html>

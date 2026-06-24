@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Vyiom Digital Solutions</title>
+  <link rel="icon" type="image/png" href="assets/logo/logo1.png">
+  <meta name="description"
+    content="Learn about Vyiom Digital Solutions — a focused digital engineering team building websites, applications, and AI systems.">
+  <link rel="stylesheet" href="_nav.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    .page-hero {
+      position: relative;
+      background: #0b0b0f;
+      padding-top: calc(var(--nav-h) + 100px);
+      padding-bottom: 120px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+    }
+
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 1.5s ease-in-out, transform 4.5s ease-out;
+    }
+
+    .hero-slide.active {
+      opacity: 0.22;
+      transform: scale(1);
+    }
+
+    @media (min-width: 1025px) {
+      .hero-slide {
+        transform: translateY(0px) scale(1.04);
+      }
+
+      .hero-slide.active {
+        transform: translateY(0px) scale(1);
+      }
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #0b0b0f 0%, rgba(11, 11, 15, 0.3) 50%, #0b0b0f 100%);
+      z-index: 1;
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .page-hero .eyebrow {
+      color: var(--purple);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .page-hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(38px, 5.5vw, 72px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+      max-width: 750px;
+    }
+
+    .page-hero-sub {
+      font-size: clamp(16px, 1.8vw, 19px);
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+
+    .hero-underline {
+      width: 60px;
+      height: 3px;
+      background: var(--purple);
+    }
+
+    /* ── STORY ── */
+    .story-sec {
+      background: var(--off);
+      padding: 60px 0 100px 0;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .story-left {
+      position: relative;
+    }
+
+    .story-bg-num {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(80px, 12vw, 160px);
+      font-weight: 800;
+      color: rgba(0, 0, 0, 0.04);
+      line-height: 1;
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .story-heading {
+      position: relative;
+      z-index: 1;
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      font-style: italic;
+      padding-top: 60px;
+    }
+
+    .story-right p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .story-right p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── STRUCTURAL VISION & MISSION SECTION ── */
+    .vision-mission-sec {
+      background: #ffffff;
+      padding: 120px 0;
+    }
+
+    .vm-block-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .vm-block-wrapper:last-child {
+      margin-bottom: 0;
+    }
+
+    .vm-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .vm-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6366f1;
+      /* Purple Main Accent */
+      font-weight: 700;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .vm-main-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+
+    .vm-description {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Image Containers Alignment */
+    .vm-image-col {
+      width: 100%;
+    }
+
+    .vm-image-frame {
+      position: relative;
+      width: 100%;
+      height: 460px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f3f4f6;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+    }
+
+    .vm-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .vm-image-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .vm-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(215deg, rgba(99, 102, 241, 0.1) 0%, transparent 60%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ── VALUES ── */
+    .values-sec {
+      background: var(--dark);
+      padding: 50px 0;
+    }
+
+    .values-header {
+      margin-bottom: 28px;
+    }
+
+    .values-header h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .val-card {
+      background: var(--dark2);
+      padding: 24px 24px;
+      border-top: 3px solid var(--purple);
+    }
+
+    .val-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .val-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+    }
+
+    /* ── QUOTE ── */
+    .quote-banner {
+      background: var(--purple);
+      padding: 60px 0;
+    }
+
+    .quote-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .quote-attr {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .vm-block-wrapper {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        margin-bottom: 80px;
+      }
+
+      .vm-block-wrapper.reverse .vm-text-col {
+        order: 2;
+      }
+
+      .vm-block-wrapper.reverse .vm-image-col {
+        order: 1;
+      }
+
+      .vm-image-frame {
+        height: 380px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding-top: calc(var(--nav-h) + 48px);
+        padding-bottom: 40px;
+      }
+
+      .story-sec {
+        padding: 40px 0 60px 0;
+      }
+
+      .vision-mission-sec {
+        padding: 80px 0;
+      }
+
+      .values-sec {
+        padding: 30px 0;
+      }
+
+      .quote-banner {
+        padding: 56px 0;
+      }
+
+      .story-heading {
+        padding-top: 40px;
+        font-size: clamp(18px, 4vw, 28px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-hero h1 {
+        font-size: clamp(28px, 8vw, 44px);
+      }
+
+      .vm-image-frame {
+        height: 280px;
+      }
+    }
+  </style>
+  <link rel="canonical" href="https://vyiom.com/about.html">
+</head>
+
+<body>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="drawer" id="drawer">
+    <div class="drawer-header">
+      <span class="drawer-logo">Vyiom</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="careers.html">Careers</a>
+      <a href="faq.html">FAQ</a>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta"><a href="contact.html">Get in Touch</a></div>
+  </div>
+
+  <nav class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo/logo1.png" alt="Vyiom" class="nav-logo-img">
+        <span class="nav-logo-name">Vyiom</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="nav-cta">Get in Touch</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg">
+      <div class="hero-slides" id="aboutHeroSlides">
+        <div class="hero-slide active" style="background-image:url('assets/images/earth.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/roboand hand.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/fr.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/robot ai.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('assets/images/ai.jpg');"></div>
+      </div>
+    </div>
+    <div class="container page-hero-content">
+      <span class="eyebrow">About Vyiom</span>
+      <h1>We are Vyiom Digital Solutions.</h1>
+      <p class="page-hero-sub">A focused digital engineering team building websites, applications, and AI systems for
+        businesses that want to grow.</p>
+      <div class="hero-underline"></div>
+    </div>
+  </section>
+
+  <section class="story-sec">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-bg-num">01</div>
+          <p class="story-heading">"Built on the belief that technology should work for you, not the other way around."
+          </p>
+        </div>
+        <div class="story-right">
+          <p>Vyiom Digital Solutions was founded with a simple conviction: most businesses are underserved by the
+            technology they use. Either it's too complex, too expensive, or built by people who don't understand the
+            actual problem. We set out to change that.</p>
+          <p>We are a lean, senior team of engineers, designers, and strategists. We don't have layers of account
+            managers or junior developers learning on your project. When you work with Vyiom, you work directly with the
+            people building your product.</p>
+          <p>Our clients range from early-stage startups to established enterprises across real estate, healthcare,
+            logistics, and hospitality. What they share is a desire to use technology as a genuine competitive advantage
+            — and the clarity to know they need a partner who can deliver it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ALIGNED & STRUCTURED VISION & MISSION SECTION ── -->
+  <section class="vision-mission-sec">
+    <div class="container">
+
+      <!-- Vision Block (Text Left / Image Right) -->
+      <div class="vm-block-wrapper">
+        <div class="vm-text-col">
+          <span class="vm-tagline">Our Vision</span>
+          <h2 class="vm-main-heading">Redefining digital engineering by eliminating technical complexity.</h2>
+          <p class="vm-description">
+            We envision a future where high-performance websites, intelligent software ecosystems, and AI frameworks
+            integrate seamlessly to unlock authentic operational scale and enduring market advantages for growing
+            businesses.
+          </p>
+        </div>
+        <div class="vm-image-col">
+          <div class="vm-image-frame">
+            <img src="assets/images/56.jpg" alt="Vyiom Vision Framework Architecture">
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Block (Image Left / Text Right) - Perfectly Alternating Grid -->
+      <div class="vm-block-wrapper reverse">
+        <div class="vm-image-col">
+          <div class="vm-image-frame">
+            <img src="assets/images/group.jpg" alt="Global Scalable Architecture Ecosystem">
+          </div>
+        </div>
+        <div class="vm-text-col">
+          <span class="vm-tagline">Our Mission</span>
+          <h2 class="vm-main-heading">Engineering resilient architectures tailored exactly to market friction points.
+          </h2>
+          <p class="vm-description">
+            We discard bloated deployment cycles and abstract strategies—empowering modern enterprises with crisp design
+            and robust code executed within weeks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="values-sec">
+    <div class="container">
+      <div class="values-header">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.45);">Our Values</span>
+        <h2>What guides everything we do</h2>
+      </div>
+      <div class="values-grid">
+        <div class="val-card">
+          <div class="val-title">Precision</div>
+          <p class="val-desc">We sweat the details. Clean code, pixel-perfect design, and systems that behave exactly as
+            intended — every time.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-title">Transparency</div>
+          <p class="val-desc">No hidden costs, no vague timelines, no surprises. You always know where your project
+            stands and why decisions are made.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-title">Long-term Thinking</div>
+          <p class="val-desc">We build for the next three years, not just the next sprint. Scalable architecture and
+            maintainable code are non-negotiable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-banner">
+    <div class="container">
+      <div class="quote-inner">
+        <p class="quote-text">"The best technology is invisible. It just works — and it makes the people using it more
+          capable."</p>
+        <div class="quote-attr">— Vyiom Digital Solutions</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer"
+    style="background: var(--white); border-top: 1px solid var(--border); padding: 50px 0 20px 0;">
+    <div class="container">
+      <div class="grid-4" style="margin-bottom: 40px; text-align: left;">
+        <div>
+          <a href="index.html" class="footer-logo-link"
+            style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 16px;">
+            <img src="assets/logo/logo1.png" alt="Vyiom" style="height: 20px;">
+            <span class="footer-logo-name"
+              style="font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);">Vyiom</span>
+          </a>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; font-weight: 300;">
+            High-performance custom web development, software solutions, and AI automation workflows built for business
+            scale.</p>
+          <p class="footer-copy" style="font-size: 11px; color: var(--muted2);">© 2026 Vyiom Digital Solutions. All
+            rights reserved.</p>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Services</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="web-development.html" style="transition: color 0.2s;">Web Development</a></li>
+            <li><a href="software-development.html" style="transition: color 0.2s;">Software Development</a></li>
+            <li><a href="ai-automation.html" style="transition: color 0.2s;">AI Automation</a></li>
+            <li><a href="data-analytics.html" style="transition: color 0.2s;">Data Analytics</a></li>
+            <li><a href="iot-smart-systems.html" style="transition: color 0.2s;">IoT Systems</a></li>
+            <li><a href="branding-design.html" style="transition: color 0.2s;">Branding &amp; Designs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Company</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="about.html" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="careers.html" style="transition: color 0.2s;">Careers</a></li>
+            <li><a href="blog.html" style="transition: color 0.2s;">Blog &amp; Insights</a></li>
+            <li><a href="case-studies.html" style="transition: color 0.2s;">Case Studies</a></li>
+            <li><a href="contact.html" style="transition: color 0.2s;">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink); margin-bottom: 16px;">
+            Resources</h4>
+          <ul
+            style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--muted);">
+            <li><a href="faq.html" style="transition: color 0.2s;">FAQ Help</a></li>
+
+            <li><a href="tel:+919342732906" style="transition: color 0.2s;">Call Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <div></div>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/company/vyiom" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/919342732906" class="footer-icon" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i></a>
+          <a href="tel:+919342732906" class="footer-icon"><i class="fas fa-phone"></i></a>
+          <a href="https://www.instagram.com/vyiomds?igsh=MWYxYjdkeWcwanI0OA==" class="footer-icon" target="_blank"
+            rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:vyiomdigitalsolutions@gmail.com" class="footer-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:+919342732906" class="float-call" aria-label="Call"><i class="fas fa-phone"></i></a>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+    const ov = document.getElementById('drawerOverlay');
+    const dr = document.getElementById('drawer');
+    const tog = s => { dr.classList.toggle('open', s); ov.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+    document.getElementById('navHamburger').addEventListener('click', () => tog(true));
+    document.getElementById('drawerClose').addEventListener('click', () => tog(false));
+    ov.addEventListener('click', () => tog(false));
+    document.querySelectorAll('.drawer-links a').forEach(a => a.addEventListener('click', () => tog(false)));
+
+    const slides = document.querySelectorAll('#aboutHeroSlides .hero-slide');
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4500);
+  </script>
+</body>
+
+</html>
