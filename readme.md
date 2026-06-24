@@ -54,11 +54,6 @@ veyom-website/
 
 ## 📞 Contact Information
 
-- **Phone**: 9342732906
-- **WhatsApp**: 93427329906
-- **Email**: veyomdigitalsolutions@gmail.com
-- **LinkedIn**: linkedin.com/company/veyom
-- **Instagram**: instagram.com/veyom
 
 ## 🎨 Design System
 
